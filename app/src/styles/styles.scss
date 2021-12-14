@@ -1,0 +1,20 @@
+/* || SIMPLE RESET */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* || RESET BOX-SIZING TO BORDER-BOX */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* || GENERAL STYLES */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
