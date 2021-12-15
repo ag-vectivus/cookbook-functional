@@ -7,8 +7,11 @@ import getData from '../api/getData';
 // config
 import endpoints from '../config/endpoints';
 
+// components
+import RecipeVideos from '../components/RecipeVideos';
+
 const Home: React.FC = () => {
-  const { recipes, dispatchRecipe } = useContext(RecipesContext);
+  const { dispatchRecipe } = useContext(RecipesContext);
 
   useEffect(() => {
     getData(`${endpoints.server}/recipes/all/`)
@@ -20,17 +23,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>CookBook</h1>
       <div className="row">
-        {recipes.length > 0 ? (
-          <ul>
-            {recipes.map((recipe) => {
-              return <li key={recipe.name}>{recipe.name}</li>;
-            })}
-          </ul>
-        ) : (
-          'There is no content yet...'
-        )}
+        <main className="main">
+          <RecipeVideos />
+        </main>
       </div>
     </div>
   );

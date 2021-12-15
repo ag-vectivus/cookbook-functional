@@ -22,3 +22,7 @@
     }
   }
 }
+
+@mixin heading-text-decoration {
+  text-decoration: 1px solid orange underline;
+}
