@@ -1,0 +1,24 @@
+@mixin glass-antiqua-font {
+  font-family: 'Glass Antiqua', cursive;
+  font-weight: 700;
+}
+
+@mixin life-savers-font {
+  font-family: 'Life Savers', cursive;
+}
+
+@mixin border-animation {
+  animation: change-color 10s ease infinite;
+
+  @keyframes change-color {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
