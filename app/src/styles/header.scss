@@ -1,0 +1,23 @@
+.header {
+  position: relative;
+
+  &__border {
+    height: 3px;
+    background: linear-gradient(120deg, red, orange, green);
+    background-size: 400% 400%;
+    @include border-animation;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include glass-antiqua-font;
+    font-size: 4rem;
+
+    &--font-size {
+      font-size: 3rem;
+    }
+  }
+}

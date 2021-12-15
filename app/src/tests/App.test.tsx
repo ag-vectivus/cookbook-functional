@@ -11,6 +11,14 @@ describe('App displays correctly', () => {
     expect(nav).toBeInTheDocument();
   });
 
+  test('Display header', () => {
+    render(<App />);
+
+    const headerTitle = screen.getByTestId('header-cookbook');
+
+    expect(headerTitle).toBeInTheDocument();
+  });
+
   test('Display content', () => {
     render(<App />);
 
