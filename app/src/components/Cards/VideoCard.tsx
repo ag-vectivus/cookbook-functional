@@ -4,8 +4,17 @@ import { Link } from 'react-router-dom';
 // interfaces
 import IVideo from '../../ts/interfaces/IVideo';
 
+// helpers
+import pathParser from '../../helpers/pathParser';
+
+// service
+import setLinkPath from '../../service/setLinkPath';
+
 const VideoCard = (props: { video: IVideo }) => {
   const { id, name, videoId, category } = props.video;
+  const pathElements: string[] = pathParser(window.location.pathname);
+  const url: string = setLinkPath(pathElements.length, category, id);
+
   return (
     <div className="card">
       <div className="card-image">
@@ -22,10 +31,7 @@ const VideoCard = (props: { video: IVideo }) => {
         </a>
       </div>
       <div className="main__caption center-align card-action truncate">
-        <Link
-          to={`/recipes/${category}/${id}`}
-          className="orange-text text-darken-4"
-        >
+        <Link to={url} className="orange-text text-darken-4">
           {name}
         </Link>
       </div>
