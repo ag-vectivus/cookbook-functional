@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+// config
 import endpoints from './config/endpoints';
+
+// components
+import Navbar from './modules/Navigation/Navbar';
 
 function App() {
   const [content, setContent] = useState('');
@@ -20,8 +26,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>CookBook</h1>
-      {content.length > 0 ? content : 'There is no content yet...'}
+      <BrowserRouter>
+        <Navbar />
+        <h1>CookBook</h1>
+        {content.length > 0 ? content : 'There is no content yet...'}
+      </BrowserRouter>
     </div>
   );
 }

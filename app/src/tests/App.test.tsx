@@ -1,13 +1,23 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from '../App';
 
-test('App displays correctly', () => {
-  render(<App />);
+describe('App displays correctly', () => {
+  test('Display navbar', () => {
+    render(<App />);
 
-  const heading = screen.getByRole('heading', { name: /cookbook/i });
-  expect(heading).toBeInTheDocument();
+    const nav = screen.getByRole('navigation');
 
-  const noContent = screen.getByText(/there is no content yet/i);
-  expect(noContent).toBeInTheDocument();
+    expect(nav).toBeInTheDocument();
+  });
+
+  test('Display content', () => {
+    render(<App />);
+
+    const heading = screen.getByRole('heading', { name: /cookbook/i });
+    expect(heading).toBeInTheDocument();
+
+    const noContent = screen.getByText(/there is no content yet/i);
+    expect(noContent).toBeInTheDocument();
+  });
 });

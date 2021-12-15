@@ -1,0 +1,16 @@
+.nav {
+  &__logo {
+    @include glass-antiqua-font;
+  }
+
+  &__border {
+    height: 1px;
+    background: linear-gradient(120deg, red, orange, green);
+    background-size: 400% 400%;
+    animation: change-color 10s ease infinite;
+
+    &--height {
+      height: 3px;
+    }
+  }
+}
