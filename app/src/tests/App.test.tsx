@@ -19,7 +19,7 @@ describe('App displays correctly', () => {
     expect(headerTitle).toBeInTheDocument();
   });
 
-  test('Display content', () => {
+  test('Display data from context', async () => {
     render(<App />);
 
     const heading = screen.getByRole('heading', { name: /cookbook/i });
@@ -27,6 +27,9 @@ describe('App displays correctly', () => {
 
     const noContent = screen.getByText(/there is no content yet/i);
     expect(noContent).toBeInTheDocument();
+
+    const recipesList = await screen.findAllByRole('listitem');
+    expect(recipesList).toHaveLength(4);
   });
 
   test('Display footer', () => {
