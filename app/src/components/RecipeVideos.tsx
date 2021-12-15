@@ -32,7 +32,14 @@ const RecipeVideos: React.FC = () => {
       {videos.length > 0 ? (
         <div className="row">
           {videos.map((video, index) => {
-            return <VideoCard video={video} key={`video-card-${index}`} />;
+            return (
+              <div
+                className="main__video col s12 m6 xl4"
+                key={`video-card-${index}`}
+              >
+                <VideoCard video={video} />
+              </div>
+            );
           })}
         </div>
       ) : (
