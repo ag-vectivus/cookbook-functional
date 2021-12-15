@@ -14,11 +14,12 @@ describe('Display Home page correctly', () => {
       </RecipesContextProvider>
     );
 
-    const noContent = screen.getByText(/there is no content yet/i);
-    expect(noContent).toBeInTheDocument();
-
     // recipe videos
     const videos = await screen.findAllByAltText(/video thumbnail/i);
     expect(videos).toHaveLength(3);
+
+    // latest recipes
+    const latestRecipes = await screen.findAllByAltText(/latest recipe/i);
+    expect(latestRecipes).toHaveLength(4);
   });
 });

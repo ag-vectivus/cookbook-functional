@@ -9,6 +9,7 @@ import endpoints from '../config/endpoints';
 
 // components
 import RecipeVideos from '../components/RecipeVideos';
+import RecipeLatest from '../components/RecipeLatest';
 
 const Home: React.FC = () => {
   const { dispatchRecipe } = useContext(RecipesContext);
@@ -24,9 +25,12 @@ const Home: React.FC = () => {
   return (
     <div className="container">
       <div className="row">
-        <main className="main">
-          <RecipeVideos />
-        </main>
+        <div className="col s12 l8">
+          <main className="main">
+            <RecipeVideos />
+            <RecipeLatest />
+          </main>
+        </div>
       </div>
     </div>
   );
