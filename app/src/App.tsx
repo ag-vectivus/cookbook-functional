@@ -7,6 +7,7 @@ import endpoints from './config/endpoints';
 // components
 import Navbar from './modules/Navigation/Navbar';
 import Header from './modules/Header/Header';
+import Footer from './modules/Footer/Footer';
 
 function App() {
   const [content, setContent] = useState('');
@@ -32,6 +33,7 @@ function App() {
         <Header />
         <h1>CookBook</h1>
         {content.length > 0 ? content : 'There is no content yet...'}
+        <Footer />
       </BrowserRouter>
     </div>
   );

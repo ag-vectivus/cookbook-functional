@@ -28,4 +28,11 @@ describe('App displays correctly', () => {
     const noContent = screen.getByText(/there is no content yet/i);
     expect(noContent).toBeInTheDocument();
   });
+
+  test('Display footer', () => {
+    render(<App />);
+
+    const copyright = screen.getByText(/cookbook \| 2021/i);
+    expect(copyright).toBeInTheDocument();
+  });
 });
