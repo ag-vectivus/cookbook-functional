@@ -22,4 +22,18 @@ describe('Display Home page correctly', () => {
     const latestRecipes = await screen.findAllByAltText(/latest recipe/i);
     expect(latestRecipes).toHaveLength(4);
   });
+
+  test('Display aside', () => {
+    render(
+      <RecipesContextProvider>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </RecipesContextProvider>
+    );
+
+    // about section
+    const aboutHeading = screen.getByRole('heading', { name: /about/i });
+    expect(aboutHeading).toBeInTheDocument();
+  });
 });

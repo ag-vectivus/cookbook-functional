@@ -8,6 +8,7 @@ import getData from '../api/getData';
 import endpoints from '../config/endpoints';
 
 // components
+import Aside from '../modules/Aside/Aside';
 import RecipeVideos from '../components/RecipeVideos';
 import RecipeLatest from '../components/RecipeLatest';
 
@@ -30,6 +31,9 @@ const Home: React.FC = () => {
             <RecipeVideos />
             <RecipeLatest />
           </main>
+        </div>
+        <div className="col s12 l4">
+          <Aside />
         </div>
       </div>
     </div>

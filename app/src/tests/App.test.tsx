@@ -19,6 +19,14 @@ describe('App displays correctly', () => {
     expect(headerTitle).toBeInTheDocument();
   });
 
+  test('Display aside', () => {
+    render(<App />);
+
+    const aboutTitle = screen.getByRole('heading', { name: /about/i });
+
+    expect(aboutTitle).toBeInTheDocument();
+  });
+
   test('Display footer', () => {
     render(<App />);
 
