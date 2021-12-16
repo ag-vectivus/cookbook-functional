@@ -1,0 +1,25 @@
+{
+  "popular": [
+    {
+      "id": "52854",
+      "name": "Pancakes",
+      "category": "Dessert",
+      "thumbnail": "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg",
+      "views": 370
+    },
+    {
+      "id": "52923",
+      "name": "Canadian Butter Tarts",
+      "category": "Dessert",
+      "thumbnail": "https://www.themealdb.com/images/media/meals/wpputp1511812960.jpg",
+      "views": 268
+    },
+    {
+      "id": "53023",
+      "name": "Sledz w Oleju (Polish Herrings)",
+      "category": "Seafood",
+      "thumbnail": "https://www.themealdb.com/images/media/meals/7ttta31593350374.jpg",
+      "views": 73
+    }
+  ]
+}

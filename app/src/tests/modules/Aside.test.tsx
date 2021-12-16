@@ -36,4 +36,20 @@ describe('Display Aside correctly', () => {
     const subscribeBtn = screen.getByRole('button', { name: /subscribe/i });
     expect(subscribeBtn).toBeInTheDocument();
   });
+
+  test('Display pupular recipes correctly', async () => {
+    render(
+      <BrowserRouter>
+        <Aside />
+      </BrowserRouter>
+    );
+
+    const popularRecipesHeading = screen.getByRole('heading', {
+      name: /popular recipes/i,
+    });
+    expect(popularRecipesHeading).toBeInTheDocument();
+
+    const popularRecipesCollection = await screen.findAllByText(/views: /i);
+    expect(popularRecipesCollection).toHaveLength(3);
+  });
 });
