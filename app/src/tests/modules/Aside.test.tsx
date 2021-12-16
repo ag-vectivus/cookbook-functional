@@ -11,10 +11,29 @@ describe('Display Aside correctly', () => {
       </BrowserRouter>
     );
 
-    const about = screen.getByAltText(/man/i);
-    expect(about).toBeInTheDocument();
+    const aboutImg = screen.getByAltText(/man/i);
+    expect(aboutImg).toBeInTheDocument();
 
     const aboutBtn = screen.getByRole('link', { name: /more about us/i });
     expect(aboutBtn).toBeInTheDocument();
+  });
+
+  test('Display newsletter section correctly', () => {
+    render(
+      <BrowserRouter>
+        <Aside />
+      </BrowserRouter>
+    );
+
+    const newsletterHeading = screen.getByRole('heading', {
+      name: /never miss a recipe/i,
+    });
+    expect(newsletterHeading).toBeInTheDocument();
+
+    const emailInput = screen.getByRole('textbox', { name: /email/i });
+    expect(emailInput).toBeInTheDocument();
+
+    const subscribeBtn = screen.getByRole('button', { name: /subscribe/i });
+    expect(subscribeBtn).toBeInTheDocument();
   });
 });
