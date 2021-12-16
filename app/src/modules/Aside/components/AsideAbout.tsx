@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // components
 import AsideSection from '../../../components/AsideSection';
 
-const About = () => {
+const AsideAbout = () => {
   return (
     <AsideSection title="About">
       <div className="row">
@@ -36,4 +36,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AsideAbout;

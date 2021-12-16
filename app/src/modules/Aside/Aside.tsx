@@ -1,12 +1,12 @@
 import React from 'react';
 
 // components
-import About from './components/About';
+import AsideAbout from './components/AsideAbout';
 
 const Aside = () => {
   return (
     <aside className="aside">
-      <About />
+      <AsideAbout />
     </aside>
   );
 };
