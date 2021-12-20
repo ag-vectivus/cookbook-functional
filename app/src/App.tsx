@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RecipesContextProvider from './contexts/RecipesContext';
 
 // components
@@ -9,6 +9,7 @@ import Footer from './modules/Footer/Footer';
 
 // pages
 import Home from './pages/Home';
+import StaticPageTemplate from './templates/StaticPageTemplate';
 
 function App() {
   return (
@@ -17,7 +18,12 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Header />
-          <Home />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<StaticPageTemplate />} />
+            <Route path="terms" element={<StaticPageTemplate />} />
+            <Route path="privacy" element={<StaticPageTemplate />} />
+          </Routes>
           <Footer />
         </BrowserRouter>
       </RecipesContextProvider>
