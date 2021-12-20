@@ -10,6 +10,7 @@ import Footer from './modules/Footer/Footer';
 // pages
 import Home from './pages/Home';
 import Sitemap from './pages/Sitemap';
+import NotFound from './pages/NotFound';
 
 // templates
 import StaticPageTemplate from './templates/StaticPageTemplate';
@@ -27,6 +28,7 @@ function App() {
             <Route path="terms" element={<StaticPageTemplate />} />
             <Route path="privacy" element={<StaticPageTemplate />} />
             <Route path="sitemap" element={<Sitemap />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </BrowserRouter>
