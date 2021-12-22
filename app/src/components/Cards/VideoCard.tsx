@@ -10,6 +10,9 @@ import pathParser from '../../helpers/pathParser';
 // service
 import setLinkPath from '../../service/setLinkPath';
 
+// components
+import VideoModal from '../VideoModal';
+
 const VideoCard = (props: { video: IVideo }) => {
   const { id, name, videoId, category } = props.video;
   const pathElements: string[] = pathParser(window.location.pathname);
@@ -24,8 +27,9 @@ const VideoCard = (props: { video: IVideo }) => {
           className="responsive-img"
         />
         <a
-          href=""
-          className="btn-floating halfway-fab waves-effect waves-light red"
+          href={`#videoModal-${id}`}
+          className="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+          data-testid={`video-modal-trigger-${id}`}
         >
           <i className="material-icons">play_circle</i>
         </a>
@@ -35,6 +39,7 @@ const VideoCard = (props: { video: IVideo }) => {
           {name}
         </Link>
       </div>
+      <VideoModal recipe={props.video} />
     </div>
   );
 };
