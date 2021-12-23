@@ -20,7 +20,7 @@ describe('Display Home page correctly', () => {
     expect(videos).toHaveLength(3);
 
     // latest recipes
-    const latestRecipes = await screen.findAllByAltText(/latest recipe/i);
+    const latestRecipes = await screen.findAllByAltText(/dish\:/i);
     expect(latestRecipes).toHaveLength(4);
   });
 

@@ -6,10 +6,7 @@ const setLinkPath = (
   let url: string;
   switch (pathElementsNumber) {
     case 1:
-      url = `/${category}/${id}`;
-      break;
-    case 2:
-      url = `/${id}`;
+      url = `./${category}`;
       break;
     default:
       url = `/recipes/${category}/${id}`;

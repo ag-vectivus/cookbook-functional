@@ -15,7 +15,7 @@ const MobileNav: React.FC = () => {
         <img className="responsive-img" src={navBackground} alt="" />
       </div>
       <li>
-        <Link to="/">
+        <Link to="/recipes">
           <span className="white-text">Recipes</span>
         </Link>
       </li>

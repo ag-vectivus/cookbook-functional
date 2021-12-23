@@ -6,7 +6,7 @@ const DesktopNav: React.FC = () => {
     <React.Fragment>
       <ul className="right hide-on-med-and-down" data-testid="desktop-nav">
         <li>
-          <Link to="/">Recipes</Link>
+          <Link to="/recipes">Recipes</Link>
         </li>
         <li>
           <Link to="/">Contact</Link>

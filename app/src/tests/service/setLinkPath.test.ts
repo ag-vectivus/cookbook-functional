@@ -7,9 +7,5 @@ test('return path based on current location', () => {
 
   [number, category, id] = [1, 'pasta', '19450508'];
   path = setLinkPath(number, category, id);
-  expect(path).toStrictEqual('/pasta/19450508');
-
-  [number, category, id] = [2, 'pork', '19440606'];
-  path = setLinkPath(number, category, id);
-  expect(path).toStrictEqual('/19440606');
+  expect(path).toStrictEqual('./pasta');
 });

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 // interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
+import IRecipeCard from '../../ts/interfaces/IRecipeCard';
 
 // helpers
 import pathParser from '../../helpers/pathParser';
@@ -10,7 +11,7 @@ import pathParser from '../../helpers/pathParser';
 // service
 import setLinkPath from '../../service/setLinkPath';
 
-const RecipeCard = (props: { recipe: IRecipe }) => {
+const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }) => {
   const { category, id, name, thumbnail } = props.recipe;
   const pathElements: string[] = pathParser(window.location.pathname);
   const url: string = setLinkPath(pathElements.length, category, id);
@@ -21,7 +22,7 @@ const RecipeCard = (props: { recipe: IRecipe }) => {
         <div className="card-image">
           <img
             src={thumbnail}
-            alt={`Latest recipe: ${name}`}
+            alt={`Dish: ${name}`}
             className="responsive-img"
           />
         </div>
