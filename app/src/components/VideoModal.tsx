@@ -12,11 +12,7 @@ const VideoModal: React.FC<{ recipe: IVideo }> = ({ recipe }) => {
   }, []);
 
   return (
-    <div
-      id={`videoModal-${id}`}
-      className="modal"
-      data-testid={`video-modal-${id}`}
-    >
+    <div id={`videoModal-${id}`} className="modal" data-testid={`video-modal`}>
       <div className="modal-content">
         <h4>{name}</h4>
         <div className="video-container">

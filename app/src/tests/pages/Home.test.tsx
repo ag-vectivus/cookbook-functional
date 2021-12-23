@@ -47,13 +47,14 @@ describe('Display Home page correctly', () => {
       </RecipesContextProvider>
     );
 
-    const videoModal = await screen.findByTestId('video-modal-52854');
-    expect(videoModal).toHaveClass('modal');
+    const videoModal = await screen.findAllByTestId('video-modal');
+    expect(videoModal).toHaveLength(3);
+    expect(videoModal[0]).toHaveClass('modal');
 
-    const recipeVideoTrigger = await screen.findByTestId(
-      'video-modal-trigger-52854'
+    const recipeVideoTrigger = await screen.findAllByTestId(
+      'video-modal-trigger'
     );
-    userEvent.click(recipeVideoTrigger);
-    expect(videoModal).toHaveClass('modal open');
+    userEvent.click(recipeVideoTrigger[0]);
+    expect(videoModal[0]).toHaveClass('modal open');
   });
 });

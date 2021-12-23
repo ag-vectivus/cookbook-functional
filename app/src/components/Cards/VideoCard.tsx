@@ -29,7 +29,7 @@ const VideoCard = (props: { video: IVideo }) => {
         <a
           href={`#videoModal-${id}`}
           className="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
-          data-testid={`video-modal-trigger-${id}`}
+          data-testid={`video-modal-trigger`}
         >
           <i className="material-icons">play_circle</i>
         </a>
