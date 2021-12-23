@@ -39,13 +39,13 @@ const Categories = () => {
     <div className="container">
       <MainSection title="categories">
         <div className="row">
-          {content.map((category) => {
+          {content.map((recipe) => {
             return (
               <div
-                className="col s6 m6 l4 xl3 main__card"
-                key={`recipes-${category.name}-link`}
+                className="col s6 m6 l4 xl3"
+                key={`recipes-${recipe.name}-link`}
               >
-                <RecipeCard recipe={category} />
+                <RecipeCard recipe={recipe} />
               </div>
             );
           })}

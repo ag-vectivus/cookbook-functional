@@ -10,6 +10,7 @@ import Footer from './modules/Footer/Footer';
 // pages
 import Home from './pages/Home';
 import Categories from './pages/Categories';
+import Recipes from './pages/Recipes';
 import Sitemap from './pages/Sitemap';
 import NotFound from './pages/NotFound';
 
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="recipes" element={<Categories />} />
+            <Route path="recipes/:category" element={<Recipes />} />
             <Route path="about" element={<StaticPageTemplate />} />
             <Route path="terms" element={<StaticPageTemplate />} />
             <Route path="privacy" element={<StaticPageTemplate />} />

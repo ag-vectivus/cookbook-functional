@@ -1,4 +1,6 @@
-import React, { createContext, useReducer, Dispatch } from 'react';
+import React, { createContext, useReducer, Dispatch, useEffect } from 'react';
+import getData from '../api/getData';
+import endpoints from '../config/endpoints';
 import { RecipeReducer } from '../reducers/RecipeReducer';
 
 // interfaces
