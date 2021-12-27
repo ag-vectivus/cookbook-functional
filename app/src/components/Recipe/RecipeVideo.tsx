@@ -6,6 +6,9 @@ import IRecipe from '../../ts/interfaces/IRecipe';
 
 // components
 import VideoCard from '../Cards/VideoCard';
+import RecipeHeading from './RecipeHeading';
+
+// service
 import getVideoId from '../../service/getVideoId';
 
 const RecipeVideo = (props: { recipe: IRecipe }) => {
@@ -20,12 +23,11 @@ const RecipeVideo = (props: { recipe: IRecipe }) => {
   };
 
   return (
-    <section>
-      <h5 className="main__heading">Video</h5>
+    <RecipeHeading title="video">
       <div className="main__image">
         <VideoCard video={videoData} pulse={true} />
       </div>
-    </section>
+    </RecipeHeading>
   );
 };
 

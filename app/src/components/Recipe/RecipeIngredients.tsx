@@ -6,6 +6,9 @@ import ingredientsArray from '../../service/ingredientsArray';
 // interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 
+// components
+import RecipeHeading from './RecipeHeading';
+
 const RecipeIngredients = (props: { recipe: IRecipe }) => {
   const { recipe } = props;
   const { name } = recipe;
@@ -14,8 +17,7 @@ const RecipeIngredients = (props: { recipe: IRecipe }) => {
   const measures = ingredientsArray(recipe, 'measure');
 
   return (
-    <section>
-      <h5 className="main__heading">Ingredients</h5>
+    <RecipeHeading title="Ingredients">
       <ul className="main__list main__list--margin-x">
         {ingredients.map((ingredient, index) => {
           return (
@@ -25,7 +27,7 @@ const RecipeIngredients = (props: { recipe: IRecipe }) => {
           );
         })}
       </ul>
-    </section>
+    </RecipeHeading>
   );
 };
 
