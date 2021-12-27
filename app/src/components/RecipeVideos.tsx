@@ -37,7 +37,7 @@ const RecipeVideos: React.FC = () => {
                 className="main__video col s12 m6 xl4"
                 key={`video-card-${index}`}
               >
-                <VideoCard video={video} />
+                <VideoCard video={video} pulse={false} />
               </div>
             );
           })}

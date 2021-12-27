@@ -18,6 +18,25 @@
 
   &__list {
     margin: 1rem 2rem;
+
+    &--margin-x {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__paragraph {
+    text-indent: 1rem;
+    margin-left: 1rem;
+    text-align: justify;
+  }
+
+  &__image {
+    padding: 1rem;
+  }
+
+  &__breadcrumb {
+    margin-left: 1rem;
   }
 
   &__markup {

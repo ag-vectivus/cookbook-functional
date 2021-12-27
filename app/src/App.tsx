@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound';
 
 // templates
 import StaticPageTemplate from './templates/StaticPageTemplate';
+import RecipePageTemplate from './templates/RecipePageTemplate';
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="recipes" element={<Categories />} />
             <Route path="recipes/:category" element={<Recipes />} />
+            <Route
+              path="recipes/:category/:id"
+              element={<RecipePageTemplate />}
+            />
             <Route path="about" element={<StaticPageTemplate />} />
             <Route path="terms" element={<StaticPageTemplate />} />
             <Route path="privacy" element={<StaticPageTemplate />} />

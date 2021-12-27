@@ -13,7 +13,7 @@ import setLinkPath from '../../service/setLinkPath';
 // components
 import VideoModal from '../VideoModal';
 
-const VideoCard = (props: { video: IVideo }) => {
+const VideoCard = (props: { video: IVideo; pulse: boolean }) => {
   const { id, name, videoId, category } = props.video;
   const pathElements: string[] = pathParser(window.location.pathname);
   const url: string = setLinkPath(pathElements.length, category, id);
@@ -28,7 +28,9 @@ const VideoCard = (props: { video: IVideo }) => {
         />
         <a
           href={`#videoModal-${id}`}
-          className="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+          className={`btn-floating halfway-fab waves-effect ${
+            props.pulse ? 'btn-floating pulse' : ''
+          } waves-light red modal-trigger`}
           data-testid={`video-modal-trigger`}
         >
           <i className="material-icons">play_circle</i>
