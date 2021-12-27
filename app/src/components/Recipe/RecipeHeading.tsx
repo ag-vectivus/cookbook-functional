@@ -1,6 +1,9 @@
 import React from 'react';
 
-const RecipeHeading = (props: { children: JSX.Element; title: string }) => {
+const RecipeHeading = (props: {
+  children: JSX.Element | JSX.Element[];
+  title: string;
+}) => {
   const { children, title } = props;
 
   return (

@@ -77,8 +77,41 @@ describe('RecipePageTemplate displays correctly', () => {
     const shareButtonsList = await screen.findAllByTestId('share-button');
     expect(shareButtonsList).toHaveLength(6);
 
+    const relatedRecipes = await screen.findByText(
+      /It seems that there is no related recipes yet./i
+    );
+    expect(relatedRecipes).toBeInTheDocument();
+
     const recipeVideoTrigger = await screen.findByTestId('video-modal-trigger');
     userEvent.click(recipeVideoTrigger);
     expect(videoModal).toHaveClass('modal open');
+  });
+
+  test('Data provided - another recipe with different properties', async () => {
+    global.window = Object.create(window);
+    const url = '/recipes/dessert/52923';
+    Object.defineProperty(window, 'location', {
+      value: {
+        pathname: url,
+      },
+      writable: true,
+    });
+
+    const dispatchRecipe = jest.fn();
+    const { recipes } = allRecipes;
+
+    render(
+      <RecipesContext.Provider value={{ recipes, dispatchRecipe }}>
+        <BrowserRouter>
+          <RecipePageTemplate />
+        </BrowserRouter>
+      </RecipesContext.Provider>
+    );
+
+    const image = await screen.findByAltText(/Dish: Canadian Butter Tarts/i);
+    expect(image).toBeInTheDocument();
+
+    const relatedRecipes = await screen.findAllByTestId('related-recipe');
+    expect(relatedRecipes).toHaveLength(2);
   });
 });

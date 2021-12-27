@@ -5,6 +5,7 @@ import { RecipesContext } from '../contexts/RecipesContext';
 import MainSection from '../components/MainSection';
 import RecipeImage from '../components/Recipe/RecipeImage';
 import RecipeVideo from '../components/Recipe/RecipeVideo';
+import RecipeRelated from '../components/Recipe/RecipeRelated';
 import RecipeBreadcrumb from '../components/Recipe/RecipeBreadcrumb';
 import RecipeDescription from '../components/Recipe/RecipeDescription';
 import RecipeIngredients from '../components/Recipe/RecipeIngredients';
@@ -51,6 +52,7 @@ const RecipePageTemplate = () => {
                 <RecipeDescription recipe={recipe} />
                 <RecipeVideo recipe={recipe} />
                 <RecipeShareButtons recipe={recipe} />
+                <RecipeRelated recipe={recipe} />
               </MainSection>
             ) : (
               <MainSection title={`Recipe: ${id}`}>
