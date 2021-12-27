@@ -21,7 +21,7 @@ const RecipeIngredients = (props: { recipe: IRecipe }) => {
       <ul className="main__list main__list--margin-x">
         {ingredients.map((ingredient, index) => {
           return (
-            <li key={`ingredient-${index}-${name}`}>
+            <li key={`ingredient-${index}-${name}`} data-testid="ingredient">
               {measures[index]} - {ingredient}
             </li>
           );

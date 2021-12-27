@@ -17,6 +17,7 @@ import IRecipe from '../ts/interfaces/IRecipe';
 
 // helpers
 import pathParser from '../helpers/pathParser';
+import RecipeShareButtons from '../components/Recipe/RecipeShareButtons';
 
 const RecipePageTemplate = () => {
   const { recipes } = useContext(RecipesContext);
@@ -49,6 +50,7 @@ const RecipePageTemplate = () => {
                 <RecipeIngredients recipe={recipe} />
                 <RecipeDescription recipe={recipe} />
                 <RecipeVideo recipe={recipe} />
+                <RecipeShareButtons recipe={recipe} />
               </MainSection>
             ) : (
               <MainSection title={`Recipe: ${id}`}>

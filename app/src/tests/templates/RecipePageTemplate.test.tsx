@@ -67,12 +67,15 @@ describe('RecipePageTemplate displays correctly', () => {
     const instructions = await screen.findByText(/soak herring in cold water/i);
     expect(instructions).toBeInTheDocument();
 
-    const ingredients = await screen.findAllByRole('listitem');
+    const ingredients = await screen.findAllByTestId('ingredient');
     expect(ingredients).toHaveLength(6);
 
     const videoModal = await screen.findByTestId('video-modal');
     expect(videoModal).toBeInTheDocument();
     expect(videoModal).toHaveClass('modal');
+
+    const shareButtonsList = await screen.findAllByTestId('share-button');
+    expect(shareButtonsList).toHaveLength(6);
 
     const recipeVideoTrigger = await screen.findByTestId('video-modal-trigger');
     userEvent.click(recipeVideoTrigger);
