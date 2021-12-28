@@ -23,12 +23,20 @@ import RecipeShareButtons from '../components/Recipe/RecipeShareButtons';
 const RecipePageTemplate = () => {
   const { recipes } = useContext(RecipesContext);
   const [recipe, setRecipe] = useState<IRecipe>(null!);
-
-  const path: string = window.location.pathname;
-  const id: string = pathParser(path).pop()!;
+  const [recipeId, setRecipeId] = useState('');
 
   useEffect(() => {
-    const currentRecipe = recipes.find((recipe) => recipe.id === id);
+    const path: string = window.location.pathname;
+    const id: string = pathParser(path).pop()!;
+    setRecipeId(id);
+
+    return () => {
+      setRecipeId('');
+    };
+  }, []);
+
+  useEffect(() => {
+    const currentRecipe = recipes.find((recipe) => recipe.id === recipeId);
     if (currentRecipe !== undefined) {
       setRecipe(currentRecipe);
     }
@@ -36,7 +44,14 @@ const RecipePageTemplate = () => {
     return () => {
       setRecipe(null!);
     };
-  }, []);
+  });
+
+  const forceUpdate = () => {
+    const path: string = window.location.pathname;
+    const id: string = pathParser(path).pop()!;
+
+    setRecipeId(id);
+  };
 
   return (
     <React.Fragment>
@@ -52,15 +67,17 @@ const RecipePageTemplate = () => {
                 <RecipeDescription recipe={recipe} />
                 <RecipeVideo recipe={recipe} />
                 <RecipeShareButtons recipe={recipe} />
-                <RecipeRelated recipe={recipe} />
+                <span onClick={forceUpdate}>
+                  <RecipeRelated recipe={recipe} />
+                </span>
               </MainSection>
             ) : (
-              <MainSection title={`Recipe: ${id}`}>
+              <MainSection title={`Recipe: ${recipeId}`}>
                 <p>There is no recipe like this.</p>
               </MainSection>
             )}
           </div>
-          <div className="col s12 l4">
+          <div className="col s12 l4" onClick={forceUpdate}>
             <Aside />
           </div>
         </div>

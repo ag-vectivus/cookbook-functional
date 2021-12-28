@@ -19,6 +19,14 @@ export const RecipesContext = createContext<ContextType>(null!);
 const RecipesContextProvider: React.FC = ({ children }) => {
   const [recipes, dispatchRecipe] = useReducer(RecipeReducer, []);
 
+  useEffect(() => {
+    getData(`${endpoints.server}/recipes/all/`)
+      .then((res) => {
+        dispatchRecipe({ type: 'GET_ALL_RECIPES', recipes: res.recipes });
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
+
   return (
     <RecipesContext.Provider value={{ recipes, dispatchRecipe }}>
       {children}

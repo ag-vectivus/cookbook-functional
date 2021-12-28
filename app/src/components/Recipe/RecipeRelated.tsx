@@ -13,6 +13,7 @@ import RecipeHeading from './RecipeHeading';
 
 const RecipeRelated = (props: { recipe: IRecipe }) => {
   const [content, setContent] = useState<IRecipe[]>([]);
+
   const { recipes } = useContext(RecipesContext);
   const { category, id } = props.recipe;
 
@@ -25,11 +26,7 @@ const RecipeRelated = (props: { recipe: IRecipe }) => {
     return () => {
       setContent([]);
     };
-  }, []);
-
-  const forceUpdate = () => {
-    window.location.reload();
-  };
+  }, [props.recipe]);
 
   return (
     <RecipeHeading title="Related recipes">
@@ -38,7 +35,6 @@ const RecipeRelated = (props: { recipe: IRecipe }) => {
           content.map((recipe) => {
             return (
               <div
-                onClick={forceUpdate}
                 className="col s12 m6 xl4"
                 key={`related-recipe-${recipe.id}`}
                 data-testid="related-recipe"
