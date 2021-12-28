@@ -7,6 +7,7 @@ import oldMap from '../assets/images/old-map.png';
 // components
 import MainSection from '../components/MainSection';
 import SitemapLink from '../components/SitemapLink';
+import Image from '../components/Image/Image';
 
 // config
 import { categories, staticPages } from '../config/sitemap';
@@ -51,7 +52,7 @@ const Sitemap = () => {
             </ul>
           </div>
           <div className="col l6 hide-on-med-and-down">
-            <img src={oldMap} alt="" className="responsive-img" />
+            <Image src={oldMap} alt="" />
           </div>
         </div>
       </MainSection>

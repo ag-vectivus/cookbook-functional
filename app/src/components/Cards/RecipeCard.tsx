@@ -11,6 +11,9 @@ import pathParser from '../../helpers/pathParser';
 // service
 import setLinkPath from '../../service/setLinkPath';
 
+// components
+import Image from '../Image/Image';
+
 const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }) => {
   const { category, id, name, thumbnail } = props.recipe;
   const pathElements: string[] = pathParser(window.location.pathname);
@@ -20,11 +23,7 @@ const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }) => {
     <div className="card">
       <Link to={url} className="white-text truncate center-align">
         <div className="card-image">
-          <img
-            src={thumbnail}
-            alt={`Dish: ${name}`}
-            className="responsive-img"
-          />
+          <Image alt={`Dish: ${name}`} src={thumbnail} />
         </div>
         <div className="card-action teal darken-4 truncate">{name}</div>
       </Link>

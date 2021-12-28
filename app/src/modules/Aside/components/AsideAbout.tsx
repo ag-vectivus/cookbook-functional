@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom';
 
 // components
 import AsideSection from '../../../components/AsideSection';
+import Image from '../../../components/Image/Image';
 
 const AsideAbout = () => {
   return (
     <AsideSection title="About">
       <div className="row">
         <div className="col s12 m6 l12">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1601923907709-db31b8cd0d63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
             alt="man"
-            className="aside__image responsive-img"
+            className="aside__image"
           />
         </div>
         <div className="col s12 m6 l12">

@@ -12,6 +12,7 @@ import setLinkPath from '../../service/setLinkPath';
 
 // components
 import VideoModal from '../VideoModal';
+import Image from '../Image/Image';
 
 const VideoCard = (props: { video: IVideo; pulse: boolean }) => {
   const { id, name, videoId, category } = props.video;
@@ -21,10 +22,9 @@ const VideoCard = (props: { video: IVideo; pulse: boolean }) => {
   return (
     <div className="card">
       <div className="card-image">
-        <img
+        <Image
           src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
           alt={`video thumbnail: ${name}`}
-          className="responsive-img"
         />
         <a
           href={`#videoModal-${id}`}

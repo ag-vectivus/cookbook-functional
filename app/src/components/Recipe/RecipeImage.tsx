@@ -3,14 +3,16 @@ import React from 'react';
 // interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 
+// components
+import Image from '../Image/Image';
+
 const RecipeImage = (props: { recipe: IRecipe }) => {
   const { thumbnail, name } = props.recipe;
   return (
-    <img
+    <Image
       src={thumbnail}
       alt={`Dish: ${name}`}
-      width={'100%'}
-      className="materialboxed responsive-img main__image"
+      className="materialboxed main__image"
     />
   );
 };

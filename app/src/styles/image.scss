@@ -1,0 +1,7 @@
+.image {
+  transition: all 1000ms ease;
+
+  &__blur {
+    filter: blur(20px);
+  }
+}
