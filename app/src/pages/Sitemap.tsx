@@ -12,9 +12,14 @@ import Image from '../components/Image/Image';
 // config
 import { categories, staticPages } from '../config/sitemap';
 
+// seo
+import seo from '../config/seo';
+import HelmetComponent from '../components/Helmet/HelmetComponent';
+
 const Sitemap = () => {
   return (
     <div className="container">
+      <HelmetComponent title={`${seo.basicTitle} - Sitemap`} />
       <MainSection title="Sitemap">
         <div className="row">
           <div className="col s12 l6">

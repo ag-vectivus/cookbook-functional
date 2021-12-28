@@ -11,6 +11,10 @@ import pathParser from '../helpers/pathParser';
 import MainSection from '../components/MainSection';
 import RecipeCard from '../components/Cards/RecipeCard';
 
+// seo
+import seo from '../config/seo';
+import HelmetComponent from '../components/Helmet/HelmetComponent';
+
 const Recipes = () => {
   const [content, setContent] = useState<IRecipe[]>([]);
   const { recipes } = useContext(RecipesContext);
@@ -32,6 +36,7 @@ const Recipes = () => {
 
   return (
     <div className="container">
+      <HelmetComponent title={`${seo.basicTitle} - Recipes`} />
       <MainSection title={category}>
         <div className="row">
           {content.map((recipe) => {

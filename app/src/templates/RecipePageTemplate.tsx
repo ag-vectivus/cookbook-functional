@@ -20,6 +20,10 @@ import IRecipe from '../ts/interfaces/IRecipe';
 import pathParser from '../helpers/pathParser';
 import RecipeShareButtons from '../components/Recipe/RecipeShareButtons';
 
+// seo
+import HelmetComponent from '../components/Helmet/HelmetComponent';
+import seo from '../config/seo';
+
 const RecipePageTemplate = () => {
   const { recipes } = useContext(RecipesContext);
   const [recipe, setRecipe] = useState<IRecipe>(null!);
@@ -62,6 +66,10 @@ const RecipePageTemplate = () => {
           <div className="col s12 l8">
             {recipe !== null ? (
               <MainSection title={recipe.name}>
+                <HelmetComponent
+                  title={`${seo.basicTitle} - ${recipe.name}`}
+                  description={`${recipe.category} dish: ${recipe.name}`}
+                />
                 <RecipeImage recipe={recipe} />
                 <RecipeIngredients recipe={recipe} />
                 <RecipeDescription recipe={recipe} />

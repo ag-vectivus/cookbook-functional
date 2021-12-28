@@ -5,9 +5,17 @@ import Aside from '../modules/Aside/Aside';
 import RecipeVideos from '../components/RecipeVideos';
 import RecipeLatest from '../components/RecipeLatest';
 
+// seo
+import seo from '../config/seo';
+import HelmetComponent from '../components/Helmet/HelmetComponent';
+
 const Home: React.FC = () => {
   return (
     <div className="container">
+      <HelmetComponent
+        title={seo.basicTitle}
+        description={seo.homeDescription}
+      />
       <div className="row">
         <div className="col s12 l8">
           <main className="main">

@@ -13,6 +13,10 @@ import IRecipeCard from '../ts/interfaces/IRecipeCard';
 import MainSection from '../components/MainSection';
 import RecipeCard from '../components/Cards/RecipeCard';
 
+// seo
+import seo from '../config/seo';
+import HelmetComponent from '../components/Helmet/HelmetComponent';
+
 const Categories = () => {
   const [content, setContent] = useState<IRecipeCard[]>([]);
 
@@ -37,6 +41,7 @@ const Categories = () => {
 
   return (
     <div className="container">
+      <HelmetComponent title={`${seo.basicTitle} - Categories`} />
       <MainSection title="categories">
         <div className="row">
           {content.map((recipe) => {

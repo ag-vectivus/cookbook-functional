@@ -5,6 +5,10 @@ import parse from 'html-react-parser';
 // components
 import MainSection from '../components/MainSection';
 
+// seo
+import seo from '../config/seo';
+import HelmetComponent from '../components/Helmet/HelmetComponent';
+
 // config
 import endpoints from '../config/endpoints';
 
@@ -28,6 +32,7 @@ const StaticPageTemplate = () => {
 
   return (
     <div className="container">
+      <HelmetComponent title={`${seo.basicTitle} - ${title}`} />
       <MainSection title={title}>
         <div className="main__markup">{parse(content)}</div>
       </MainSection>
