@@ -30,6 +30,14 @@ const RecipePageTemplate = () => {
   const [recipeId, setRecipeId] = useState('');
 
   useEffect(() => {
+    // scroll to top (breadcrumb)
+    const top = document.querySelector('#breadcrumb');
+    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+  }, [recipeId]);
+
+  useEffect(() => {
+    // get recipe id and change state
     const path: string = window.location.pathname;
     const id: string = pathParser(path).pop()!;
     setRecipeId(id);
@@ -40,6 +48,7 @@ const RecipePageTemplate = () => {
   }, []);
 
   useEffect(() => {
+    // get recipe to display from recipes
     const currentRecipe = recipes.find((recipe) => recipe.id === recipeId);
     if (currentRecipe !== undefined) {
       setRecipe(currentRecipe);
@@ -59,7 +68,9 @@ const RecipePageTemplate = () => {
 
   return (
     <React.Fragment>
-      {recipe !== null ? <RecipeBreadcrumb recipe={recipe} /> : null}
+      <span id="breadcrumb">
+        {recipe !== null ? <RecipeBreadcrumb recipe={recipe} /> : null}
+      </span>
 
       <div className="container">
         <div className="row">

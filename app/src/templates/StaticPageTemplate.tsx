@@ -17,6 +17,13 @@ const StaticPageTemplate = () => {
   const title: string = window.location.pathname.slice(1);
 
   useEffect(() => {
+    // scroll to top
+    const top = document.querySelector('h4');
+    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+  }, [content]);
+
+  useEffect(() => {
     fetch(`${endpoints.server}/text/${title}.md`)
       .then((res) => res.text())
       .then((text) => {

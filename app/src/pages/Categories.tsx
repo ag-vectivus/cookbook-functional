@@ -21,6 +21,13 @@ const Categories = () => {
   const [content, setContent] = useState<IRecipeCard[]>([]);
 
   useEffect(() => {
+    // scroll to top
+    const top = document.querySelector('h4');
+    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+  }, [content]);
+
+  useEffect(() => {
     getData(`${endpoints.server}/recipes/categories/`)
       .then((res) => {
         const updatedRes: IRecipeCard[] = res.categories.map(

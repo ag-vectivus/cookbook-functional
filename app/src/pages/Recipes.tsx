@@ -22,6 +22,13 @@ const Recipes = () => {
   const category: string = pathParser(window.location.pathname).pop()!;
 
   useEffect(() => {
+    // scroll to top
+    const top = document.querySelector('h4');
+    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+  }, [content]);
+
+  useEffect(() => {
     if (recipes.length > 0) {
       const filteredRecipes: IRecipe[] = recipes.filter(
         (recipe) => recipe.category.toLowerCase() === category

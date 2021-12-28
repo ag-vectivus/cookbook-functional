@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // images
@@ -17,6 +17,13 @@ import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 
 const Sitemap = () => {
+  useEffect(() => {
+    // scroll to top
+    const top = document.querySelector('h4');
+    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="container">
       <HelmetComponent title={`${seo.basicTitle} - Sitemap`} />
