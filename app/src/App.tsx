@@ -7,6 +7,7 @@ import AuthContextProvider from './contexts/AuthContext';
 import Navbar from './modules/Navigation/Navbar';
 import Header from './modules/Header/Header';
 import Footer from './modules/Footer/Footer';
+import ScrollButton from './components/ScrollButton';
 
 // pages
 import Home from './pages/Home';
@@ -41,6 +42,7 @@ function App() {
               <Route path="sitemap" element={<Sitemap />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <ScrollButton />
             <Footer />
           </BrowserRouter>
         </AuthContextProvider>

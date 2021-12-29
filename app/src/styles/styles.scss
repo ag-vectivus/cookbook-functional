@@ -20,10 +20,11 @@ body {
 }
 
 @import './config/mixins.scss';
-@import './image.scss';
+@import './components/scroll-button.scss';
+@import './components/image.scss';
 @import './navbar.scss';
 @import './header.scss';
 @import './main.scss';
 @import './aside.scss';
 @import './footer.scss';
-@import './sitemap.scss';
+@import './pages/sitemap.scss';
