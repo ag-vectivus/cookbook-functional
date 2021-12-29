@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RecipesContextProvider from './contexts/RecipesContext';
+import AuthContextProvider from './contexts/AuthContext';
 
 // components
 import Navbar from './modules/Navigation/Navbar';
@@ -22,25 +23,27 @@ function App() {
   return (
     <div className="App">
       <RecipesContextProvider>
-        <BrowserRouter>
-          <Navbar />
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="recipes" element={<Categories />} />
-            <Route path="recipes/:category" element={<Recipes />} />
-            <Route
-              path="recipes/:category/:id"
-              element={<RecipePageTemplate />}
-            />
-            <Route path="about" element={<StaticPageTemplate />} />
-            <Route path="terms" element={<StaticPageTemplate />} />
-            <Route path="privacy" element={<StaticPageTemplate />} />
-            <Route path="sitemap" element={<Sitemap />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
+        <AuthContextProvider>
+          <BrowserRouter>
+            <Navbar />
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="recipes" element={<Categories />} />
+              <Route path="recipes/:category" element={<Recipes />} />
+              <Route
+                path="recipes/:category/:id"
+                element={<RecipePageTemplate />}
+              />
+              <Route path="about" element={<StaticPageTemplate />} />
+              <Route path="terms" element={<StaticPageTemplate />} />
+              <Route path="privacy" element={<StaticPageTemplate />} />
+              <Route path="sitemap" element={<Sitemap />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </AuthContextProvider>
       </RecipesContextProvider>
     </div>
   );
