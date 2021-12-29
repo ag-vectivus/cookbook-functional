@@ -24,6 +24,12 @@ const StaticPageTemplate = () => {
   }, [content]);
 
   useEffect(() => {
+    const localData = localStorage.getItem(`${title}`);
+    if (localData !== null) {
+      setContent(JSON.parse(localData));
+      return;
+    }
+
     fetch(`${endpoints.server}/text/${title}.md`)
       .then((res) => res.text())
       .then((text) => {
@@ -36,6 +42,10 @@ const StaticPageTemplate = () => {
       setContent('');
     };
   }, [title]);
+
+  useEffect(() => {
+    localStorage.setItem(`${title}`, JSON.stringify(content));
+  }, [content]);
 
   return (
     <div className="container">

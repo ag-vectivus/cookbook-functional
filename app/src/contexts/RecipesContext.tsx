@@ -20,12 +20,24 @@ const RecipesContextProvider: React.FC = ({ children }) => {
   const [recipes, dispatchRecipe] = useReducer(RecipeReducer, []);
 
   useEffect(() => {
+    const localData = localStorage.getItem('recipes');
+    if (localData !== null) {
+      dispatchRecipe({
+        type: 'GET_ALL_RECIPES',
+        recipes: JSON.parse(localData),
+      });
+      return;
+    }
     getData(`${endpoints.server}/recipes/all/`)
       .then((res) => {
         dispatchRecipe({ type: 'GET_ALL_RECIPES', recipes: res.recipes });
       })
       .catch((err) => console.log(err.message));
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+  }, [recipes]);
 
   return (
     <RecipesContext.Provider value={{ recipes, dispatchRecipe }}>

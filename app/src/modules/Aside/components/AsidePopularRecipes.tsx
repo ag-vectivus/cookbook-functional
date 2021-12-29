@@ -18,6 +18,12 @@ const AsidePopularRecipes = () => {
   const [popularRecipes, setPopularRecipes] = useState([]);
 
   useEffect(() => {
+    const localData = localStorage.getItem('popular');
+    if (localData !== null) {
+      setPopularRecipes(JSON.parse(localData));
+      return;
+    }
+
     getData(`${endpoints.server}/recipes/popular/`)
       .then((res) => {
         setPopularRecipes(res.popular);
@@ -28,6 +34,10 @@ const AsidePopularRecipes = () => {
       setPopularRecipes([]);
     };
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('popular', JSON.stringify(popularRecipes));
+  }, [popularRecipes]);
 
   return (
     <AsideSection title="Popular recipes">

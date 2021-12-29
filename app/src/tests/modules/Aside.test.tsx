@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Aside from '../../modules/Aside/Aside';
 
@@ -38,6 +38,14 @@ describe('Display Aside correctly', () => {
   });
 
   test('Display pupular recipes correctly', async () => {
+    Object.defineProperty(window, 'localStorage', {
+      value: {
+        getItem: jest.fn(() => null),
+        setItem: jest.fn(() => null),
+      },
+      writable: true,
+    });
+
     render(
       <BrowserRouter>
         <Aside />
@@ -50,6 +58,8 @@ describe('Display Aside correctly', () => {
     expect(popularRecipesHeading).toBeInTheDocument();
 
     const popularRecipesCollection = await screen.findAllByText(/views: /i);
-    expect(popularRecipesCollection).toHaveLength(3);
+    await waitFor(() => {
+      expect(popularRecipesCollection).toHaveLength(3);
+    });
   });
 });

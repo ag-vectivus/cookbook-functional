@@ -28,6 +28,12 @@ const Categories = () => {
   }, [content]);
 
   useEffect(() => {
+    const localData = localStorage.getItem('categories');
+    if (localData !== null) {
+      setContent(JSON.parse(localData));
+      return;
+    }
+
     getData(`${endpoints.server}/recipes/categories/`)
       .then((res) => {
         const updatedRes: IRecipeCard[] = res.categories.map(
@@ -45,6 +51,10 @@ const Categories = () => {
       setContent([]);
     };
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('categories', JSON.stringify(content));
+  }, [content]);
 
   return (
     <div className="container">
