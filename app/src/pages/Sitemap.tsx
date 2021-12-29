@@ -16,12 +16,12 @@ import { categories, staticPages } from '../config/sitemap';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 
+// helpers
+import scrollToSelector from '../helpers/scrollToSelector';
+
 const Sitemap = () => {
   useEffect(() => {
-    // scroll to top
-    const top = document.querySelector('h4');
-    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+    scrollToSelector('h4');
   }, []);
 
   return (

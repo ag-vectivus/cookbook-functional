@@ -12,15 +12,15 @@ import HelmetComponent from '../components/Helmet/HelmetComponent';
 // config
 import endpoints from '../config/endpoints';
 
+// helpers
+import scrollToSelector from '../helpers/scrollToSelector';
+
 const StaticPageTemplate = () => {
   const [content, setContent] = useState('');
   const title: string = window.location.pathname.slice(1);
 
   useEffect(() => {
-    // scroll to top
-    const top = document.querySelector('h4');
-    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+    scrollToSelector('h4');
   }, [content]);
 
   useEffect(() => {

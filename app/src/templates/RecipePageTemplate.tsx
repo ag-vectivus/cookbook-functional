@@ -18,6 +18,7 @@ import IRecipe from '../ts/interfaces/IRecipe';
 
 // helpers
 import pathParser from '../helpers/pathParser';
+import scrollToSelector from '../helpers/scrollToSelector';
 import RecipeShareButtons from '../components/Recipe/RecipeShareButtons';
 
 // seo
@@ -30,10 +31,7 @@ const RecipePageTemplate = () => {
   const [recipeId, setRecipeId] = useState('');
 
   useEffect(() => {
-    // scroll to top (breadcrumb)
-    const top = document.querySelector('#breadcrumb');
-    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+    scrollToSelector('#breadcrumb');
   }, [recipeId]);
 
   useEffect(() => {

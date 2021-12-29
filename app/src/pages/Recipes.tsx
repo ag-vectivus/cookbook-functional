@@ -6,6 +6,7 @@ import IRecipe from '../ts/interfaces/IRecipe';
 
 // helpers
 import pathParser from '../helpers/pathParser';
+import scrollToSelector from '../helpers/scrollToSelector';
 
 // components
 import MainSection from '../components/MainSection';
@@ -22,10 +23,7 @@ const Recipes = () => {
   const category: string = pathParser(window.location.pathname).pop()!;
 
   useEffect(() => {
-    // scroll to top
-    const top = document.querySelector('h4');
-    const topPosition = top!.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+    scrollToSelector('h4');
   }, [content]);
 
   useEffect(() => {
