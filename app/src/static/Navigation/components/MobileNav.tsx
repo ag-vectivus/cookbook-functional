@@ -20,7 +20,7 @@ const MobileNav: React.FC = () => {
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/contact">
           <span className="white-text">Contact</span>
         </Link>
       </li>

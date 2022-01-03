@@ -15,6 +15,7 @@ import Categories from './pages/Categories';
 import Recipes from './pages/Recipes';
 import Sitemap from './pages/Sitemap';
 import NotFound from './pages/NotFound';
+import Contact from './pages/Contact';
 
 // templates
 import StaticPageTemplate from './templates/StaticPageTemplate';
@@ -44,6 +45,7 @@ function App() {
               <Route path="signin" element={<SignIn />} />
               <Route path="signup" element={<SignUp />} />
               <Route path="resetpassword" element={<ResetPassword />} />
+              <Route path="contact" element={<Contact />} />
               <Route path="about" element={<StaticPageTemplate />} />
               <Route path="terms" element={<StaticPageTemplate />} />
               <Route path="privacy" element={<StaticPageTemplate />} />

@@ -9,7 +9,7 @@ const DesktopNav: React.FC = () => {
           <Link to="/recipes">Recipes</Link>
         </li>
         <li>
-          <Link to="/">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
         <li>
           <Link
