@@ -4,6 +4,12 @@
   z-index: 3;
   width: 100%;
   height: 100vh;
+  max-height: 200vh;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  &__container {
+    background: white;
+  }
 
   &__links {
     display: flex;

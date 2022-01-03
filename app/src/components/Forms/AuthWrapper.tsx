@@ -9,14 +9,16 @@ const AuthWrapper = (props: { children: ReactNode; title: string }) => {
   const { children, title } = props;
 
   return (
-    <div className="auth white valign-wrapper">
+    <div className="auth valign-wrapper">
       <div className="container">
-        <MainSection title={title}>
-          <div className="row">{children}</div>
-          <div className="row">
-            <AuthLinks title={title} />
-          </div>
-        </MainSection>
+        <div className="auth__container">
+          <MainSection title={title}>
+            <div className="row">{children}</div>
+            <div className="row">
+              <AuthLinks title={title} />
+            </div>
+          </MainSection>
+        </div>
       </div>
     </div>
   );
