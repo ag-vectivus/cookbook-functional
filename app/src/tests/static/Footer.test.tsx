@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Footer from '../../modules/Footer/Footer';
+import Footer from '../../static/Footer/Footer';
 
 describe('Display footer correctly', () => {
   test('Display link to the portfolio website and other links', () => {

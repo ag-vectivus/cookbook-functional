@@ -11,7 +11,7 @@ import RecipeDescription from '../components/Recipe/RecipeDescription';
 import RecipeIngredients from '../components/Recipe/RecipeIngredients';
 
 // modules
-import Aside from '../modules/Aside/Aside';
+import Aside from '../static/Aside/Aside';
 
 // interfaces
 import IRecipe from '../ts/interfaces/IRecipe';

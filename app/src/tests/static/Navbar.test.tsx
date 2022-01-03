@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Navbar from '../../modules/Navigation/Navbar';
+import Navbar from '../../static/Navigation/Navbar';
 
 describe('Display navbar correctly', () => {
   test('Display logo and links', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Aside from '../../modules/Aside/Aside';
+import Aside from '../../static/Aside/Aside';
 
 describe('Display Aside correctly', () => {
   test('Display about section correctly', () => {

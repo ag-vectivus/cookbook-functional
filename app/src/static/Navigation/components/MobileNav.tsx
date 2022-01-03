@@ -26,12 +26,12 @@ const MobileNav: React.FC = () => {
       </li>
       <div className="nav__border"></div>
       <li>
-        <Link to="/">
+        <Link to="/signin">
           <span className="deep-orange-text">Sign In</span>
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/signup">
           <span className="deep-orange-text">Sign Up</span>
         </Link>
       </li>

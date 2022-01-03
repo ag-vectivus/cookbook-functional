@@ -4,9 +4,9 @@ import RecipesContextProvider from './contexts/RecipesContext';
 import AuthContextProvider from './contexts/AuthContext';
 
 // components
-import Navbar from './modules/Navigation/Navbar';
-import Header from './modules/Header/Header';
-import Footer from './modules/Footer/Footer';
+import Navbar from './static/Navigation/Navbar';
+import Header from './static/Header/Header';
+import Footer from './static/Footer/Footer';
 import ScrollButton from './components/ScrollButton';
 
 // pages
@@ -19,6 +19,11 @@ import NotFound from './pages/NotFound';
 // templates
 import StaticPageTemplate from './templates/StaticPageTemplate';
 import RecipePageTemplate from './templates/RecipePageTemplate';
+
+// forms
+import SignIn from './modules/auth/SignIn';
+import SignUp from './modules/auth/SignUp';
+import ResetPassword from './modules/auth/ResetPassword';
 
 function App() {
   return (
@@ -36,6 +41,9 @@ function App() {
                 path="recipes/:category/:id"
                 element={<RecipePageTemplate />}
               />
+              <Route path="signin" element={<SignIn />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="resetpassword" element={<ResetPassword />} />
               <Route path="about" element={<StaticPageTemplate />} />
               <Route path="terms" element={<StaticPageTemplate />} />
               <Route path="privacy" element={<StaticPageTemplate />} />

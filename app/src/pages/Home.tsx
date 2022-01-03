@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import Aside from '../modules/Aside/Aside';
+import Aside from '../static/Aside/Aside';
 import RecipeVideos from '../components/RecipeVideos';
 import RecipeLatest from '../components/RecipeLatest';
 

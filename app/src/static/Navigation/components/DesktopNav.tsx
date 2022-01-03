@@ -13,14 +13,14 @@ const DesktopNav: React.FC = () => {
         </li>
         <li>
           <Link
-            to="/"
+            to="/signin"
             className="btn-floating btn-small waves-effect waves-light orange darken-2 tooltipped"
             data-tooltip="Sign in"
           >
             <span className="material-icons">login</span>
           </Link>
           <Link
-            to="/"
+            to="/signup"
             className="btn-floating btn-small waves-effect waves-light orange darken-2 tooltipped"
             data-tooltip="Sign up"
           >
