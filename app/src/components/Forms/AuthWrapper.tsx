@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 // components
-import MainSection from './MainSection';
-import AuthLinks from './AuthLinks';
+import MainSection from '../MainSection';
+import AuthLinks from '../AuthLinks';
 
 const AuthWrapper = (props: { children: ReactNode; title: string }) => {
   const { children, title } = props;

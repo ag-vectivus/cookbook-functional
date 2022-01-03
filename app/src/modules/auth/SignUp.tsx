@@ -1,33 +1,22 @@
 import React from 'react';
 
 // components
-import AuthWrapper from '../../components/AuthWrapper';
+import AuthButton from '../../components/Forms/AuthButton';
+import AuthWrapper from '../../components/Forms/AuthWrapper';
+import AuthPassword from '../../components/Forms/AuthPassword';
+import AuthEmail from '../../components/Forms/AuthEmail';
+import AuthLogin from '../../components/Forms/AuthLogin';
 
 const SignUp = () => {
+  const title = 'sign up';
+
   return (
-    <AuthWrapper title="sign up">
+    <AuthWrapper title={title}>
       <form className="col s12 push-m2 m8 push-xl3 xl6 auth__form">
-        <div className="input-field">
-          <i className="material-icons prefix">portrait</i>
-          <input id="login" type="text" className="validate" />
-          <label htmlFor="login">Login</label>
-        </div>
-        <div className="input-field">
-          <i className="material-icons prefix">email</i>
-          <input id="email" type="email" className="validate" />
-          <label htmlFor="email">Email</label>
-        </div>
-        <div className="input-field">
-          <i className="material-icons prefix">password</i>
-          <input id="password" type="password" className="validate" />
-          <label htmlFor="password">Password</label>
-        </div>
-        <button
-          type="submit"
-          className="aside__button btn-large waves-effect waves-light orange darken-2"
-        >
-          Sign up
-        </button>
+        <AuthLogin />
+        <AuthEmail />
+        <AuthPassword />
+        <AuthButton title={title} />
       </form>
     </AuthWrapper>
   );

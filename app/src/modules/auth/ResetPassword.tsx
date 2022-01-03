@@ -1,23 +1,18 @@
 import React from 'react';
 
 // components
-import AuthWrapper from '../../components/AuthWrapper';
+import AuthButton from '../../components/Forms/AuthButton';
+import AuthEmail from '../../components/Forms/AuthEmail';
+import AuthWrapper from '../../components/Forms/AuthWrapper';
 
 const ResetPassword = () => {
+  const title = 'reset password';
+
   return (
-    <AuthWrapper title="reset password">
+    <AuthWrapper title={title}>
       <form className="col s12 push-m2 m8 push-xl3 xl6 auth__form">
-        <div className="input-field">
-          <i className="material-icons prefix">email</i>
-          <input id="email" type="email" className="validate" />
-          <label htmlFor="email">Email</label>
-        </div>
-        <button
-          type="submit"
-          className="aside__button btn-large waves-effect waves-light orange darken-2"
-        >
-          Reset
-        </button>
+        <AuthEmail />
+        <AuthButton title={title} />
       </form>
     </AuthWrapper>
   );
