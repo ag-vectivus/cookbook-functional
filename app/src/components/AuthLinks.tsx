@@ -5,7 +5,7 @@ const AuthLinks = (props: { title: string }) => {
   const { title } = props;
 
   return (
-    <div className="auth__links">
+    <div className="auth__links col s12 push-m2 m8 push-xl3 xl6">
       <Link
         to={'/'}
         className={`auth__link ${

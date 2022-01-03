@@ -13,7 +13,9 @@ const AuthWrapper = (props: { children: ReactNode; title: string }) => {
       <div className="container">
         <MainSection title={title}>
           <div className="row">{children}</div>
-          <AuthLinks title={title} />
+          <div className="row">
+            <AuthLinks title={title} />
+          </div>
         </MainSection>
       </div>
     </div>

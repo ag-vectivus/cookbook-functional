@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "uid": "208s765s9823",
+      "login": "spock",
+      "email": "spock@mock.com",
+      "password": "spock123"
+    },
+    {
+      "uid": "208a765a9823",
+      "login": "mccoy",
+      "email": "mccoy@mock.com",
+      "password": "mccoy123"
+    },
+    {
+      "uid": "208d765d9823",
+      "login": "kirk",
+      "email": "kirk@mock.com",
+      "password": "kirk123"
+    }
+  ]
+}

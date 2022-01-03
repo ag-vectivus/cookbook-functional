@@ -13,6 +13,6 @@ export const AuthReducer = (state: IAuth, action: IAuthAction) => {
 };
 
 function getAuthUid(state: IAuth, action: IAuthAction) {
-  const auth: IAuth = { ...state, uid: action.uid };
+  const auth: IAuth = { uid: action.uid };
   return auth;
 }

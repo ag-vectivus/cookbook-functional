@@ -15,12 +15,10 @@ type ContextType = {
 // create context
 export const AuthContext = createContext<ContextType>(null!);
 
-const AuthContextProvider: React.FC = ({ children }) => {
-  const [auth, dispatchAuth] = useReducer(AuthReducer, {});
+const initAuth: IAuth = { uid: 'init' };
 
-  useEffect(() => {
-    dispatchAuth({ type: 'GET_AUTH_UID', uid: 'test' });
-  }, []);
+const AuthContextProvider: React.FC = ({ children }) => {
+  const [auth, dispatchAuth] = useReducer(AuthReducer, initAuth);
 
   return (
     <AuthContext.Provider value={{ auth, dispatchAuth }}>
