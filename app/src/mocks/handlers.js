@@ -6,7 +6,10 @@ import users from './data/users.json';
 import allRecipes from './data/allRecipes.json';
 import allCategories from './data/allCategories.json';
 import popularRecipes from './data/popularRecipes.json';
-import findUserByEmail from './middleware/findUserByEmail';
+
+// middleware
+import findUserBy from './middleware/findUserBy';
+import messages from '../config/messages';
 
 export const handlers = [
   rest.get(`${endpoints.server}/recipes/all/`, (req, res, ctx) => {
@@ -22,7 +25,7 @@ export const handlers = [
     const { email, password } = req.body;
 
     // middleware - find user by email
-    const user = findUserByEmail(users.users, email);
+    const user = findUserBy(users.users, 'email', email);
 
     if (user.email === email && user.password === password) {
       return res(ctx.status(200), ctx.json({ uid: user.uid }));
@@ -34,7 +37,7 @@ export const handlers = [
     const { email } = req.body;
 
     // middleware - find user by email
-    const user = findUserByEmail(users.users, email);
+    const user = findUserBy(users.users, 'email', email);
 
     if (user !== undefined && user.email === email) {
       return res(
@@ -49,5 +52,28 @@ export const handlers = [
         ctx.json({ message: 'There is no such email in the database.' })
       );
     }
+  }),
+  rest.post(`${endpoints.server}/signup`, (req, res, ctx) => {
+    const { login, email, password } = req.body;
+
+    // middleware - find if user email or login is already taken
+    const userLogin = findUserBy(users.users, 'login', login);
+    const userEmail = findUserBy(users.users, 'email', email);
+
+    let text = userLogin;
+    if (userLogin !== undefined) {
+      text = messages.LoginNotAvailable;
+    } else if (userEmail !== undefined) {
+      text = messages.EmailNotAvailable;
+    } else {
+      text = messages.AccountCreated;
+    }
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        message: text,
+      })
+    );
   }),
 ];
