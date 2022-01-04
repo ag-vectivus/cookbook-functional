@@ -4,6 +4,7 @@ import IAuthAction from '../ts/interfaces/IAuthAction';
 
 const strategies: IIndexable = {
   GET_AUTH_UID: getAuthUid,
+  LOG_OUT: logOut,
   __default__: (state: IAuth) => state,
 };
 
@@ -13,6 +14,11 @@ export const AuthReducer = (state: IAuth, action: IAuthAction) => {
 };
 
 function getAuthUid(state: IAuth, action: IAuthAction) {
+  const auth: IAuth = { uid: action.uid };
+  return auth;
+}
+
+function logOut(state: IAuth, action: IAuthAction) {
   const auth: IAuth = { uid: action.uid };
   return auth;
 }

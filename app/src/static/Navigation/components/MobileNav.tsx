@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 // images
 import navBackground from '../../../assets/images/nav-background.png';
 
 const MobileNav: React.FC = () => {
+  const { auth, dispatchAuth } = useContext(AuthContext);
+
+  const logOut = (): void => {
+    dispatchAuth({ type: 'LOG_OUT', uid: 'init' });
+  };
+
   return (
     <ul
       className="sidenav teal darken-4 white-text"
@@ -25,16 +32,26 @@ const MobileNav: React.FC = () => {
         </Link>
       </li>
       <div className="nav__border"></div>
-      <li>
-        <Link to="/signin">
-          <span className="deep-orange-text">Sign In</span>
-        </Link>
-      </li>
-      <li>
-        <Link to="/signup">
-          <span className="deep-orange-text">Sign Up</span>
-        </Link>
-      </li>
+      {auth.uid === 'init' ? (
+        <React.Fragment>
+          <li>
+            <Link to="/signin">
+              <span className="deep-orange-text">Sign In</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/signup">
+              <span className="deep-orange-text">Sign Up</span>
+            </Link>
+          </li>
+        </React.Fragment>
+      ) : (
+        <li>
+          <Link to="/" onClick={logOut}>
+            <span className="deep-orange-text">Log Out</span>
+          </Link>
+        </li>
+      )}
     </ul>
   );
 };
