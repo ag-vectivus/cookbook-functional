@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import endpoints from '../config/endpoints';
-import users from './data/users.json';
+import allUsers from './data/allUsers.json';
 import allRecipes from './data/allRecipes.json';
 import allCategories from './data/allCategories.json';
 import popularRecipes from './data/popularRecipes.json';
@@ -22,7 +22,8 @@ export const handlers = [
 
   rest.post(`${endpoints.server}/signin`, (req, res, ctx) => {
     const { email, password } = req.body;
-    const user = findUserBy(users.users, 'email', email);
+    const { users } = allUsers;
+    const user = findUserBy(users, 'email', email);
 
     if (user.email === email && user.password === password) {
       return res(ctx.status(200), ctx.json({ uid: user.uid }));
@@ -32,7 +33,8 @@ export const handlers = [
 
   rest.post(`${endpoints.server}/resetpassword`, (req, res, ctx) => {
     const { email } = req.body;
-    const user = findUserBy(users.users, 'email', email);
+    const { users } = allUsers;
+    const user = findUserBy(users, 'email', email);
     const response =
       user !== undefined && user.email === email
         ? messages.PasswordResetSuccess
@@ -43,8 +45,9 @@ export const handlers = [
 
   rest.post(`${endpoints.server}/signup`, (req, res, ctx) => {
     const { login, email, password } = req.body;
-    const userLogin = findUserBy(users.users, 'login', login);
-    const userEmail = findUserBy(users.users, 'email', email);
+    const { users } = allUsers;
+    const userLogin = findUserBy(users, 'login', login);
+    const userEmail = findUserBy(users, 'email', email);
 
     let text = userLogin;
     if (userLogin !== undefined) {
