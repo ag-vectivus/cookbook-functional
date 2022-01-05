@@ -11,40 +11,36 @@ export const handlers = [
   rest.get(`${endpoints.server}/recipes/all/`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(allRecipes));
   }),
+
   rest.get(`${endpoints.server}/recipes/categories/`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(allCategories));
   }),
+
   rest.get(`${endpoints.server}/recipes/popular/`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(popularRecipes));
   }),
+
   rest.post(`${endpoints.server}/signin`, (req, res, ctx) => {
     const { email, password } = req.body;
     const user = findUserBy(users.users, 'email', email);
 
     if (user.email === email && user.password === password) {
       return res(ctx.status(200), ctx.json({ uid: user.uid }));
-    } else {
-      return res(ctx.status(401));
     }
+    return res(ctx.status(401));
   }),
+
   rest.post(`${endpoints.server}/resetpassword`, (req, res, ctx) => {
     const { email } = req.body;
     const user = findUserBy(users.users, 'email', email);
+    const response =
+      user !== undefined && user.email === email
+        ? messages.PasswordResetSuccess
+        : messages.NoEmailInTheDB;
 
-    if (user !== undefined && user.email === email) {
-      return res(
-        ctx.status(200),
-        ctx.json({
-          message: messages.PasswordResetSuccess,
-        })
-      );
-    } else {
-      return res(
-        ctx.status(200),
-        ctx.json({ message: messages.NoEmailInTheDB })
-      );
-    }
+    return res(ctx.status(200), ctx.json({ message: response }));
   }),
+
   rest.post(`${endpoints.server}/signup`, (req, res, ctx) => {
     const { login, email, password } = req.body;
     const userLogin = findUserBy(users.users, 'login', login);
