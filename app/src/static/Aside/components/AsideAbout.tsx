@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// components
 import AsideSection from '../../../components/AsideSection';
 import Image from '../../../components/Image/Image';
+import aboutImage from '../../../assets/images/about.jpg';
 
 const AsideAbout = () => {
   return (
@@ -11,8 +10,8 @@ const AsideAbout = () => {
       <div className="row">
         <div className="col s12 m6 l12">
           <Image
-            src="https://images.unsplash.com/photo-1601923907709-db31b8cd0d63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-            alt="man"
+            src={aboutImage}
+            alt="sweeties, book and coffe"
             className="aside__image"
           />
         </div>

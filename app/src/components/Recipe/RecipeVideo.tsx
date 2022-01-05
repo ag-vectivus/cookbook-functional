@@ -1,14 +1,8 @@
 import React from 'react';
-
-// interfaces
 import IVideo from '../../ts/interfaces/IVideo';
 import IRecipe from '../../ts/interfaces/IRecipe';
-
-// components
 import VideoCard from '../Cards/VideoCard';
 import RecipeHeading from './RecipeHeading';
-
-// service
 import getVideoId from '../../service/getVideoId';
 
 const RecipeVideo = (props: { recipe: IRecipe }) => {

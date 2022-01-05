@@ -1,12 +1,6 @@
 import React from 'react';
-
-// service
 import ingredientsArray from '../../service/ingredientsArray';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
-
-// components
 import RecipeHeading from './RecipeHeading';
 
 const RecipeIngredients = (props: { recipe: IRecipe }) => {

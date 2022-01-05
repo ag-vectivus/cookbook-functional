@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
-// config
 import endpoints from '../config/endpoints';
-
-// api
 import getData from '../api/getData';
-
-// interfaces
 import IRecipeCard from '../ts/interfaces/IRecipeCard';
-
-// components
 import MainSection from '../components/MainSection';
 import RecipeCard from '../components/Cards/RecipeCard';
-
-// seo
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
-
-// helpers
 import scrollToSelector from '../helpers/scrollToSelector';
 
 const Categories = () => {

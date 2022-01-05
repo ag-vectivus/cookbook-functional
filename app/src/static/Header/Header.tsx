@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// images
 import headerBackground from '../../assets/images/header-background.png';
 
 const Header: React.FC = () => {

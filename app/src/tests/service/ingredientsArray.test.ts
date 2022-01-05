@@ -1,7 +1,5 @@
 import allRecipes from '../../mocks/data/allRecipes.json';
 import ingredientsArray from '../../service/ingredientsArray';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 
 test('get ingredients/measure from recipe object and turn them into array', () => {

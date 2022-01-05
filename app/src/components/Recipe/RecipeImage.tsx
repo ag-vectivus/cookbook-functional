@@ -1,9 +1,5 @@
 import React from 'react';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
-
-// components
 import Image from '../Image/Image';
 
 const RecipeImage = (props: { recipe: IRecipe }) => {

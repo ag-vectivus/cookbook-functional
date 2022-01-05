@@ -1,22 +1,12 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-// images
 import oldMap from '../assets/images/old-map.png';
-
-// components
 import MainSection from '../components/MainSection';
 import SitemapLink from '../components/SitemapLink';
 import Image from '../components/Image/Image';
-
-// config
 import { categories, staticPages } from '../config/sitemap';
-
-// seo
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
-
-// helpers
 import scrollToSelector from '../helpers/scrollToSelector';
 
 const Sitemap = () => {

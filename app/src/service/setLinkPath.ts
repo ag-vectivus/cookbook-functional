@@ -4,14 +4,9 @@ const setLinkPath = (
   id: string
 ) => {
   let url: string;
-  switch (pathElementsNumber) {
-    case 1:
-      url = `./${category}`;
-      break;
-    default:
-      url = `/recipes/${category}/${id}`;
-      break;
-  }
+  pathElementsNumber === 1
+    ? (url = `./${category}`)
+    : (url = `/recipes/${category}/${id}`);
   return url.toLocaleLowerCase();
 };
 

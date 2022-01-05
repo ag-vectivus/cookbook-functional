@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
-// components
 import PopularRecipe from '../../../components/PopularRecipe';
 import AsideSection from '../../../components/AsideSection';
 import Preloader from '../../../components/Preloader';
-
-// interfaces
 import IPopularRecipe from '../../../ts/interfaces/IPopularRecipe';
-
-// config
 import endpoints from '../../../config/endpoints';
-
-// api
 import getData from '../../../api/getData';
 
 const AsidePopularRecipes = () => {

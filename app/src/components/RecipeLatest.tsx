@@ -1,15 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { RecipesContext } from '../contexts/RecipesContext';
-
-// components
 import MainSection from './MainSection';
 import RecipeCard from './Cards/RecipeCard';
 import Preloader from './Preloader';
-
-// interfaces
 import IRecipe from '../ts/interfaces/IRecipe';
-
-// service
 import getLatestRecipes from '../service/getLatestRecipes';
 
 const RecipeLatest: React.FC = () => {

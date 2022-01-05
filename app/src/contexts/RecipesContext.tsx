@@ -2,18 +2,14 @@ import React, { createContext, useReducer, Dispatch, useEffect } from 'react';
 import getData from '../api/getData';
 import endpoints from '../config/endpoints';
 import { RecipeReducer } from '../reducers/RecipeReducer';
-
-// interfaces
 import IRecipe from '../ts/interfaces/IRecipe';
 import IRecipeAction from '../ts/interfaces/IRecipeAction';
 
-// type aliases
 type ContextType = {
   recipes: IRecipe[];
   dispatchRecipe: Dispatch<IRecipeAction>;
 };
 
-// create context
 export const RecipesContext = createContext<ContextType>(null!);
 
 const RecipesContextProvider: React.FC = ({ children }) => {

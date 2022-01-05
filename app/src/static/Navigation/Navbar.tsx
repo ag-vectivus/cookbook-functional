@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import M from 'materialize-css';
-
-// components
 import DesktopNav from './components/DesktopNav';
 import MobileNav from './components/MobileNav';
 

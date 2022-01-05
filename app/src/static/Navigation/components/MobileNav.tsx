@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
-
-// images
 import navBackground from '../../../assets/images/nav-background.png';
 
 const MobileNav: React.FC = () => {

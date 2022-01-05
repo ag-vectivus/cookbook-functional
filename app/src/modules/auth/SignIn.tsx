@@ -1,17 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
-
-// components
 import AuthButton from '../../components/Forms/AuthButton';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
 import AuthPassword from '../../components/Forms/AuthPassword';
 import AuthEmail from '../../components/Forms/AuthEmail';
-
-// config
 import endpoints from '../../config/endpoints';
-
-// api
 import getDataWithOptions from '../../api/getDataWithOptions';
 
 const SignIn = () => {

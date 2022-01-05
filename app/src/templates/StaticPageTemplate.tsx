@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import showdown from 'showdown';
 import parse from 'html-react-parser';
-
-// components
 import MainSection from '../components/MainSection';
-
-// seo
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
-
-// config
 import endpoints from '../config/endpoints';
-
-// helpers
 import scrollToSelector from '../helpers/scrollToSelector';
 
 const StaticPageTemplate = () => {

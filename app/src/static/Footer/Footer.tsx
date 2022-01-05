@@ -1,9 +1,5 @@
 import React from 'react';
-
-// config
 import endpoints from '../../config/endpoints';
-
-// components
 import FooterLinks from './components/FooterLinks';
 
 const Footer: React.FC = () => {

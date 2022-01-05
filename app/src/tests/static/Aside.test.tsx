@@ -11,7 +11,7 @@ describe('Display Aside correctly', () => {
       </BrowserRouter>
     );
 
-    const aboutImg = screen.getByAltText(/man/i);
+    const aboutImg = screen.getByAltText(/sweeties/i);
     expect(aboutImg).toBeInTheDocument();
 
     const aboutBtn = screen.getByRole('link', { name: /more about us/i });

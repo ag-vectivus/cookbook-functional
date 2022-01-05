@@ -1,17 +1,13 @@
 import React, { createContext, useReducer, useEffect, Dispatch } from 'react';
 import { AuthReducer } from '../reducers/AuthReducer';
-
-// interfaces
 import IAuth from '../ts/interfaces/IAuth';
 import IAuthAction from '../ts/interfaces/IAuthAction';
 
-// type aliases
 type ContextType = {
   auth: IAuth;
   dispatchAuth: Dispatch<IAuthAction>;
 };
 
-// create context
 const initAuth: IAuth = { uid: 'init' };
 
 export const AuthContext = createContext<ContextType>({
@@ -24,11 +20,9 @@ const AuthContextProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     const localData = localStorage.getItem('auth');
-    if (localData !== null) {
-      dispatchAuth({ type: 'GET_AUTH_UID', uid: JSON.parse(localData).uid });
-    } else {
-      dispatchAuth({ type: 'GET_AUTH_UID', uid: 'init' });
-    }
+    localData !== null
+      ? dispatchAuth({ type: 'GET_AUTH_UID', uid: JSON.parse(localData).uid })
+      : dispatchAuth({ type: 'GET_AUTH_UID', uid: 'init' });
   }, []);
 
   useEffect(() => {

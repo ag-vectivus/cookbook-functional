@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { RecipesContext } from '../contexts/RecipesContext';
-
-// components
 import MainSection from '../components/MainSection';
 import RecipeImage from '../components/Recipe/RecipeImage';
 import RecipeVideo from '../components/Recipe/RecipeVideo';
@@ -9,19 +7,11 @@ import RecipeRelated from '../components/Recipe/RecipeRelated';
 import RecipeBreadcrumb from '../components/Recipe/RecipeBreadcrumb';
 import RecipeDescription from '../components/Recipe/RecipeDescription';
 import RecipeIngredients from '../components/Recipe/RecipeIngredients';
-
-// modules
 import Aside from '../static/Aside/Aside';
-
-// interfaces
 import IRecipe from '../ts/interfaces/IRecipe';
-
-// helpers
 import pathParser from '../helpers/pathParser';
 import scrollToSelector from '../helpers/scrollToSelector';
 import RecipeShareButtons from '../components/Recipe/RecipeShareButtons';
-
-// seo
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 import seo from '../config/seo';
 

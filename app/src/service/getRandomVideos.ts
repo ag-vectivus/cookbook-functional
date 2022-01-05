@@ -1,7 +1,5 @@
 import getVideoId from './getVideoId';
 import shuffleArray from '../helpers/shuffleArray';
-
-// interfaces
 import IRecipe from '../ts/interfaces/IRecipe';
 
 const getRandomVideos = (recipes: IRecipe[], numberOfVideosToGet: number) => {

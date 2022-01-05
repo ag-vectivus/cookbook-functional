@@ -1,17 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 import IRecipeCard from '../../ts/interfaces/IRecipeCard';
-
-// helpers
 import pathParser from '../../helpers/pathParser';
-
-// service
 import setLinkPath from '../../service/setLinkPath';
-
-// components
 import Image from '../Image/Image';
 
 const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }) => {

@@ -1,7 +1,4 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
-
-// components
 import MainSection from '../MainSection';
 import AuthLinks from '../AuthLinks';
 

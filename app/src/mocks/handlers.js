@@ -1,13 +1,9 @@
 import { rest } from 'msw';
 import endpoints from '../config/endpoints';
-
-// data
 import users from './data/users.json';
 import allRecipes from './data/allRecipes.json';
 import allCategories from './data/allCategories.json';
 import popularRecipes from './data/popularRecipes.json';
-
-// middleware
 import findUserBy from './middleware/findUserBy';
 import messages from '../config/messages';
 
@@ -23,8 +19,6 @@ export const handlers = [
   }),
   rest.post(`${endpoints.server}/signin`, (req, res, ctx) => {
     const { email, password } = req.body;
-
-    // middleware - find user by email
     const user = findUserBy(users.users, 'email', email);
 
     if (user.email === email && user.password === password) {
@@ -35,8 +29,6 @@ export const handlers = [
   }),
   rest.post(`${endpoints.server}/resetpassword`, (req, res, ctx) => {
     const { email } = req.body;
-
-    // middleware - find user by email
     const user = findUserBy(users.users, 'email', email);
 
     if (user !== undefined && user.email === email) {
@@ -55,8 +47,6 @@ export const handlers = [
   }),
   rest.post(`${endpoints.server}/signup`, (req, res, ctx) => {
     const { login, email, password } = req.body;
-
-    // middleware - find if user email or login is already taken
     const userLogin = findUserBy(users.users, 'login', login);
     const userEmail = findUserBy(users.users, 'email', email);
 

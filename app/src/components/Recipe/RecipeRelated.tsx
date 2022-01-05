@@ -1,14 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
-
-// contexts
 import { RecipesContext } from '../../contexts/RecipesContext';
 import getRelatedRecipes from '../../service/getRelatedRecipes';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 import RecipeCard from '../Cards/RecipeCard';
-
-// components
 import RecipeHeading from './RecipeHeading';
 
 const RecipeRelated = (props: { recipe: IRecipe }) => {

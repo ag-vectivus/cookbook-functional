@@ -1,6 +1,4 @@
 import shuffleArray from '../helpers/shuffleArray';
-
-// interfaces
 import IRecipe from '../ts/interfaces/IRecipe';
 
 const getRelatedRecipes = (

@@ -13,11 +13,7 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from 'react-share';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
-
-// components
 import RecipeHeading from '../Recipe/RecipeHeading';
 
 const RecipeShareButtons = (props: { recipe: IRecipe }) => {

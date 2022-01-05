@@ -1,18 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { RecipesContext } from '../contexts/RecipesContext';
-
-// interfaces
 import IRecipe from '../ts/interfaces/IRecipe';
-
-// helpers
 import pathParser from '../helpers/pathParser';
 import scrollToSelector from '../helpers/scrollToSelector';
-
-// components
 import MainSection from '../components/MainSection';
 import RecipeCard from '../components/Cards/RecipeCard';
-
-// seo
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 

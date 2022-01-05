@@ -1,7 +1,5 @@
 import allRecipes from '../../mocks/data/allRecipes.json';
 import getLatestRecipes from '../../service/getLatestRecipes';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 
 test('sort recipes by date and return explicit number of last of them', () => {

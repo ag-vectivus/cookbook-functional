@@ -1,13 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
-
-// components
 import AuthButton from '../../components/Forms/AuthButton';
 import AuthEmail from '../../components/Forms/AuthEmail';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
-
-// config
 import endpoints from '../../config/endpoints';
 import getDataWithOptions from '../../api/getDataWithOptions';
 

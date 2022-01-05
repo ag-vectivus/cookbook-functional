@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import M from 'materialize-css';
-
-// interfaces
 import IVideo from '../ts/interfaces/IVideo';
 
 const VideoModal: React.FC<{ recipe: IVideo }> = ({ recipe }) => {

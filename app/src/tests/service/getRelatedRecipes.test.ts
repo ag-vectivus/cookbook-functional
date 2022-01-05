@@ -1,7 +1,5 @@
 import allRecipes from '../../mocks/data/allRecipes.json';
 import getRelatedRecipes from '../../service/getRelatedRecipes';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 
 describe('test getRelatedRecipes fn', () => {

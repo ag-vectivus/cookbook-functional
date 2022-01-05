@@ -1,14 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import M from 'materialize-css';
-
-// helpers
 import pathParser from '../helpers/pathParser';
-
-// service
 import setLinkPath from '../service/setLinkPath';
-
-// interfaces
 import IPopularRecipe from '../ts/interfaces/IPopularRecipe';
 
 const PopularRecipe = (props: { recipe: IPopularRecipe }) => {

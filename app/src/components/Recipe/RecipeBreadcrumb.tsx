@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// interfaces
 import IRecipe from '../../ts/interfaces/IRecipe';
 
 const RecipeBreadcrumb = (props: { recipe: IRecipe }) => {

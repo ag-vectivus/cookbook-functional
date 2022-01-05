@@ -1,6 +1,4 @@
 import React from 'react';
-
-// components
 import MainSection from '../components/MainSection';
 import AuthEmail from '../components/Forms/AuthEmail';
 import AuthButton from '../components/Forms/AuthButton';

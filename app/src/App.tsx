@@ -2,26 +2,18 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RecipesContextProvider from './contexts/RecipesContext';
 import AuthContextProvider from './contexts/AuthContext';
-
-// components
 import Navbar from './static/Navigation/Navbar';
 import Header from './static/Header/Header';
 import Footer from './static/Footer/Footer';
 import ScrollButton from './components/ScrollButton';
-
-// pages
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import Recipes from './pages/Recipes';
 import Sitemap from './pages/Sitemap';
 import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
-
-// templates
 import StaticPageTemplate from './templates/StaticPageTemplate';
 import RecipePageTemplate from './templates/RecipePageTemplate';
-
-// forms
 import SignIn from './modules/auth/SignIn';
 import SignUp from './modules/auth/SignUp';
 import ResetPassword from './modules/auth/ResetPassword';

@@ -2,16 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
-
-// context
 import RecipesContextProvider, {
   RecipesContext,
 } from '../../contexts/RecipesContext';
-
-// data
 import allRecipes from '../../mocks/data/allRecipes.json';
-
-// template
 import RecipePageTemplate from '../../templates/RecipePageTemplate';
 
 describe('RecipePageTemplate displays correctly', () => {

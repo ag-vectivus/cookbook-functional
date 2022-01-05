@@ -1,16 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// interfaces
 import IVideo from '../../ts/interfaces/IVideo';
-
-// helpers
 import pathParser from '../../helpers/pathParser';
-
-// service
 import setLinkPath from '../../service/setLinkPath';
-
-// components
 import VideoModal from '../VideoModal';
 import Image from '../Image/Image';
 

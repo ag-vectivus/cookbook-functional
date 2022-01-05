@@ -1,14 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { RecipesContext } from '../contexts/RecipesContext';
-
-// components
 import VideoCard from './Cards/VideoCard';
 import Preloader from './Preloader';
-
-// interfaces
 import IVideo from '../ts/interfaces/IVideo';
-
-// service
 import getRandomVideos from '../service/getRandomVideos';
 import MainSection from './MainSection';
 
