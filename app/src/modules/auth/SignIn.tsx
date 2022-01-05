@@ -7,6 +7,7 @@ import AuthEmail from '../../components/Forms/AuthEmail';
 import endpoints from '../../config/endpoints';
 import getDataWithOptions from '../../api/getDataWithOptions';
 import AuthFooter from '../../components/Forms/AuthFooter';
+import postCredentials from '../../api/postCredentials';
 
 const SignIn = () => {
   const title = 'sign in';
@@ -29,14 +30,7 @@ const SignIn = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const credentials = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    };
+    const credentials = postCredentials({ email, password });
 
     getDataWithOptions(`${endpoints.server}/signin`, credentials)
       .then((res) => {

@@ -6,6 +6,7 @@ import AuthWrapper from '../../components/Forms/AuthWrapper';
 import endpoints from '../../config/endpoints';
 import getDataWithOptions from '../../api/getDataWithOptions';
 import AuthFooter from '../../components/Forms/AuthFooter';
+import postCredentials from '../../api/postCredentials';
 
 const ResetPassword = () => {
   const title = 'reset password';
@@ -28,13 +29,7 @@ const ResetPassword = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const credentials = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-      }),
-    };
+    const credentials = postCredentials({ email });
 
     getDataWithOptions(`${endpoints.server}/resetpassword`, credentials)
       .then((res) => setMessage(res.message))
