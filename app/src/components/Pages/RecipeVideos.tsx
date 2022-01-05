@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { RecipesContext } from '../../contexts/RecipesContext';
 import VideoCard from './../Cards/VideoCard';
-import Preloader from './../Preloader';
+import NoData from './../NoData';
 import IVideo from '../../ts/interfaces/IVideo';
 import getRandomVideos from '../../service/getRandomVideos';
 import MainSection from './../Sections/MainSection';
@@ -37,7 +37,7 @@ const RecipeVideos: React.FC = () => {
           })}
         </div>
       ) : (
-        <Preloader />
+        <NoData />
       )}
     </MainSection>
   );

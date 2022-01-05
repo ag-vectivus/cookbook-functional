@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PopularRecipe from '../../../components/PopularRecipe';
 import AsideSection from '../../../components/Sections/AsideSection';
-import Preloader from '../../../components/Preloader';
+import NoData from '../../../components/NoData';
 import IPopularRecipe from '../../../ts/interfaces/IPopularRecipe';
 import endpoints from '../../../config/endpoints';
 import getData from '../../../api/getData';
@@ -42,7 +42,7 @@ const AsidePopularRecipes = () => {
           })}
         </ul>
       ) : (
-        <Preloader />
+        <NoData />
       )}
     </AsideSection>
   );

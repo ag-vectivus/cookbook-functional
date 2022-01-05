@@ -7,6 +7,7 @@ import MainSection from '../components/Sections/MainSection';
 import RecipeCard from '../components/Cards/RecipeCard';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
+import NoData from '../components/NoData';
 
 const Recipes = () => {
   const [content, setContent] = useState<IRecipe[]>([]);
@@ -36,16 +37,20 @@ const Recipes = () => {
       <HelmetComponent title={`${seo.basicTitle} - Recipes`} />
       <MainSection title={category}>
         <div className="row">
-          {content.map((recipe) => {
-            return (
-              <div
-                className="col s6 m6 l4 xl3"
-                key={`recipe-${recipe.id}-link`}
-              >
-                <RecipeCard recipe={recipe} />
-              </div>
-            );
-          })}
+          {content.length > 0 ? (
+            content.map((recipe) => {
+              return (
+                <div
+                  className="col s6 m6 l4 xl3"
+                  key={`recipe-${recipe.id}-link`}
+                >
+                  <RecipeCard recipe={recipe} />
+                </div>
+              );
+            })
+          ) : (
+            <NoData />
+          )}
         </div>
         {recipes.forEach((element) => {
           return <p>{element.name}</p>;

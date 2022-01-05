@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { RecipesContext } from '../../contexts/RecipesContext';
 import MainSection from './../Sections/MainSection';
 import RecipeCard from './../Cards/RecipeCard';
-import Preloader from './../Preloader';
+import NoData from './../NoData';
 import IRecipe from '../../ts/interfaces/IRecipe';
 import getLatestRecipes from '../../service/getLatestRecipes';
 
@@ -34,7 +34,7 @@ const RecipeLatest: React.FC = () => {
           })}
         </div>
       ) : (
-        <Preloader />
+        <NoData />
       )}
     </MainSection>
   );
