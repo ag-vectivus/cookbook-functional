@@ -6,7 +6,7 @@ import AuthPassword from '../../components/Forms/AuthPassword';
 import AuthEmail from '../../components/Forms/AuthEmail';
 import AuthLogin from '../../components/Forms/AuthLogin';
 import endpoints from '../../config/endpoints';
-import getDataWithOptions from '../../api/getDataWithOptions';
+import getData from '../../api/getData';
 import messages from '../../config/messages';
 import AuthFooter from '../../components/Forms/AuthFooter';
 import postCredentials from '../../api/postCredentials';
@@ -44,7 +44,7 @@ const SignUp = () => {
     e.preventDefault();
     const credentials = postCredentials({ login, email, password });
 
-    getDataWithOptions(`${endpoints.server}/signup`, credentials)
+    getData(`${endpoints.server}/signup`, credentials)
       .then((res) => setMessage(res.message))
       .catch((err) => setMessage(err.message));
   };

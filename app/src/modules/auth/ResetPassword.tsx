@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import AuthEmail from '../../components/Forms/AuthEmail';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
 import endpoints from '../../config/endpoints';
-import getDataWithOptions from '../../api/getDataWithOptions';
+import getData from '../../api/getData';
 import AuthFooter from '../../components/Forms/AuthFooter';
 import postCredentials from '../../api/postCredentials';
 
@@ -31,7 +31,7 @@ const ResetPassword = () => {
     e.preventDefault();
     const credentials = postCredentials({ email });
 
-    getDataWithOptions(`${endpoints.server}/resetpassword`, credentials)
+    getData(`${endpoints.server}/resetpassword`, credentials)
       .then((res) => setMessage(res.message))
       .catch((err) => setMessage(err.message));
   };

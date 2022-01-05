@@ -5,7 +5,7 @@ import AuthWrapper from '../../components/Forms/AuthWrapper';
 import AuthPassword from '../../components/Forms/AuthPassword';
 import AuthEmail from '../../components/Forms/AuthEmail';
 import endpoints from '../../config/endpoints';
-import getDataWithOptions from '../../api/getDataWithOptions';
+import getData from '../../api/getData';
 import AuthFooter from '../../components/Forms/AuthFooter';
 import postCredentials from '../../api/postCredentials';
 
@@ -32,7 +32,7 @@ const SignIn = () => {
     e.preventDefault();
     const credentials = postCredentials({ email, password });
 
-    getDataWithOptions(`${endpoints.server}/signin`, credentials)
+    getData(`${endpoints.server}/signin`, credentials)
       .then((res) => {
         dispatchAuth({ type: 'GET_AUTH_UID', uid: res.uid });
       })
