@@ -35,13 +35,13 @@ export const handlers = [
       return res(
         ctx.status(200),
         ctx.json({
-          message: 'Request sent successfully. Please check your email.',
+          message: messages.PasswordResetSuccess,
         })
       );
     } else {
       return res(
         ctx.status(200),
-        ctx.json({ message: 'There is no such email in the database.' })
+        ctx.json({ message: messages.NoEmailInTheDB })
       );
     }
   }),

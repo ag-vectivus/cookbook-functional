@@ -59,7 +59,7 @@ const SignIn = () => {
           </div>
           <div className="col s6 orange-text text-darken-4">
             {message.length > 0 ? (
-              <p data-testid="error-message">{message}</p>
+              <p data-testid="request-message">{message}</p>
             ) : null}
           </div>
         </div>

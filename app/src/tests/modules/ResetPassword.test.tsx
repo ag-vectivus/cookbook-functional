@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import ResetPassword from '../../modules/auth/ResetPassword';
 import userEvent from '@testing-library/user-event';
+import messages from '../../config/messages';
 
 test('Display ResetPassword correctly', async () => {
   render(
@@ -34,7 +35,7 @@ test('Display ResetPassword correctly', async () => {
 
   message = await screen.findByTestId('request-message');
   expect(message).toBeInTheDocument();
-  expect(message).toHaveTextContent('There is no such email in the database');
+  expect(message).toHaveTextContent(messages.NoEmailInTheDB);
 
   // after input onChange - there is no message
   userEvent.clear(input);
@@ -46,7 +47,5 @@ test('Display ResetPassword correctly', async () => {
   userEvent.click(button);
   message = await screen.findByTestId('request-message');
   expect(message).toBeInTheDocument();
-  expect(message).toHaveTextContent(
-    'Request sent successfully. Please check your email.'
-  );
+  expect(message).toHaveTextContent(messages.PasswordResetSuccess);
 });

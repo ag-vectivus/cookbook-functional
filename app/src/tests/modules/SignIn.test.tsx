@@ -41,7 +41,7 @@ describe('Test SignIn', () => {
 
     // no data provided
     userEvent.click(button);
-    let message = await screen.findByTestId('error-message');
+    let message = await screen.findByTestId('request-message');
     expect(message).toBeInTheDocument();
 
     // wrong data provided
@@ -49,7 +49,7 @@ describe('Test SignIn', () => {
     userEvent.clear(email);
     userEvent.type(email, 'spock@vulcan.com');
 
-    let errorMessage = await screen.queryByTestId('error-message');
+    let errorMessage = await screen.queryByTestId('request-message');
     expect(errorMessage).not.toBeInTheDocument();
 
     let password = screen.getByLabelText(/password/i);
@@ -57,7 +57,7 @@ describe('Test SignIn', () => {
     userEvent.type(password, 'spock123');
 
     userEvent.click(button);
-    message = await screen.findByTestId('error-message');
+    message = await screen.findByTestId('request-message');
     expect(message).toBeInTheDocument();
 
     // good data provided
