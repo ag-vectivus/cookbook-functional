@@ -14,6 +14,7 @@ const AuthEmail = ({ ...props }) => {
         type="email"
         className="validate"
         onChange={(e) => handleChange(e)}
+        required
       />
       <label htmlFor="email">Email</label>
     </div>

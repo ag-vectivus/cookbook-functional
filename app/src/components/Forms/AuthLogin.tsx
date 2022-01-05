@@ -14,6 +14,7 @@ const AuthLogin = ({ ...props }) => {
         type="text"
         className="validate"
         onChange={(e) => handleChange(e)}
+        required
       />
       <label htmlFor="login">Login</label>
     </div>

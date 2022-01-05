@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
-import AuthButton from '../../components/Forms/AuthButton';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
 import AuthPassword from '../../components/Forms/AuthPassword';
 import AuthEmail from '../../components/Forms/AuthEmail';
@@ -9,6 +8,7 @@ import AuthLogin from '../../components/Forms/AuthLogin';
 import endpoints from '../../config/endpoints';
 import getDataWithOptions from '../../api/getDataWithOptions';
 import messages from '../../config/messages';
+import AuthFooter from '../../components/Forms/AuthFooter';
 
 const SignUp = () => {
   const title = 'sign up';
@@ -65,16 +65,7 @@ const SignUp = () => {
         <AuthLogin handleChildData={setLogin} />
         <AuthEmail handleChildData={setEmail} />
         <AuthPassword handleChildData={setPassword} />
-        <div className="row valign-wrapper">
-          <div className="col s6">
-            <AuthButton title={title} />
-          </div>
-          <div className="col s6 orange-text text-darken-4">
-            {message.length > 0 ? (
-              <p data-testid="request-message">{message}</p>
-            ) : null}
-          </div>
-        </div>
+        <AuthFooter title={title} message={message} />
       </form>
     </AuthWrapper>
   );

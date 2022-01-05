@@ -14,6 +14,7 @@ const AuthPassword = ({ ...props }) => {
         type="password"
         className="validate"
         onChange={(e) => handleChange(e)}
+        required
       />
       <label htmlFor="password">Password</label>
     </div>
