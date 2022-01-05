@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AsideSection from '../../../components/AsideSection';
-import Image from '../../../components/Image/Image';
+import AsideSection from '../../../components/Sections/AsideSection';
+import Image from '../../../components/Image';
 import aboutImage from '../../../assets/images/about.jpg';
 
 const AsideAbout = () => {

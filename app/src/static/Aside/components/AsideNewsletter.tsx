@@ -1,5 +1,5 @@
 import React from 'react';
-import AsideSection from '../../../components/AsideSection';
+import AsideSection from '../../../components/Sections/AsideSection';
 
 const AsideNewsletter = () => {
   return (

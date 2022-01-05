@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PopularRecipe from '../../../components/PopularRecipe';
-import AsideSection from '../../../components/AsideSection';
+import AsideSection from '../../../components/Sections/AsideSection';
 import Preloader from '../../../components/Preloader';
 import IPopularRecipe from '../../../ts/interfaces/IPopularRecipe';
 import endpoints from '../../../config/endpoints';

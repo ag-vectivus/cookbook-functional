@@ -4,7 +4,7 @@ import IRecipe from '../../ts/interfaces/IRecipe';
 import IRecipeCard from '../../ts/interfaces/IRecipeCard';
 import pathParser from '../../helpers/pathParser';
 import setLinkPath from '../../service/setLinkPath';
-import Image from '../Image/Image';
+import Image from '../Image';
 
 const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }) => {
   const { category, id, name, thumbnail } = props.recipe;

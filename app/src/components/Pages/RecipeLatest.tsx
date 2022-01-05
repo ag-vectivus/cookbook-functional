@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { RecipesContext } from '../contexts/RecipesContext';
-import MainSection from './MainSection';
-import RecipeCard from './Cards/RecipeCard';
-import Preloader from './Preloader';
-import IRecipe from '../ts/interfaces/IRecipe';
-import getLatestRecipes from '../service/getLatestRecipes';
+import { RecipesContext } from '../../contexts/RecipesContext';
+import MainSection from './../Sections/MainSection';
+import RecipeCard from './../Cards/RecipeCard';
+import Preloader from './../Preloader';
+import IRecipe from '../../ts/interfaces/IRecipe';
+import getLatestRecipes from '../../service/getLatestRecipes';
 
 const RecipeLatest: React.FC = () => {
   const [latestRecipes, setLatestRecipes] = useState<IRecipe[]>([]);

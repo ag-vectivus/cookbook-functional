@@ -22,10 +22,10 @@ body {
 @import './config/mixins.scss';
 @import './components/scroll-button.scss';
 @import './components/image.scss';
-@import './navbar.scss';
-@import './header.scss';
-@import './main.scss';
-@import './aside.scss';
-@import './footer.scss';
-@import './auth.scss';
+@import './static/navbar.scss';
+@import './static/header.scss';
+@import './static/main.scss';
+@import './static/aside.scss';
+@import './static/footer.scss';
+@import './components/auth.scss';
 @import './pages/sitemap.scss';

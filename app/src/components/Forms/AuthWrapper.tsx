@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import MainSection from '../MainSection';
+import MainSection from '../Sections/MainSection';
 import AuthLinks from '../AuthLinks';
 
 const AuthWrapper = (props: { children: ReactNode; title: string }) => {

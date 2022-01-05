@@ -1,7 +1,7 @@
 import React from 'react';
 import Aside from '../static/Aside/Aside';
-import RecipeVideos from '../components/RecipeVideos';
-import RecipeLatest from '../components/RecipeLatest';
+import RecipeVideos from '../components/Pages/RecipeVideos';
+import RecipeLatest from '../components/Pages/RecipeLatest';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 

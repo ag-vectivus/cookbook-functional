@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import oldMap from '../assets/images/old-map.png';
-import MainSection from '../components/MainSection';
-import SitemapLink from '../components/SitemapLink';
-import Image from '../components/Image/Image';
+import MainSection from '../components/Sections/MainSection';
+import SitemapLink from '../components/Pages/SitemapLink';
+import Image from '../components/Image';
 import { categories, staticPages } from '../config/sitemap';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';

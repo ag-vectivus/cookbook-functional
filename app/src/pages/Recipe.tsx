@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { RecipesContext } from '../contexts/RecipesContext';
-import MainSection from '../components/MainSection';
+import MainSection from '../components/Sections/MainSection';
 import RecipeImage from '../components/Recipe/RecipeImage';
 import RecipeVideo from '../components/Recipe/RecipeVideo';
 import RecipeRelated from '../components/Recipe/RecipeRelated';
@@ -15,7 +15,7 @@ import RecipeShareButtons from '../components/Recipe/RecipeShareButtons';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 import seo from '../config/seo';
 
-const RecipePageTemplate = () => {
+const Recipe = () => {
   const { recipes } = useContext(RecipesContext);
   const [recipe, setRecipe] = useState<IRecipe>(null!);
   const [recipeId, setRecipeId] = useState('');
@@ -93,4 +93,4 @@ const RecipePageTemplate = () => {
   );
 };
 
-export default RecipePageTemplate;
+export default Recipe;

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { RecipesContext } from '../contexts/RecipesContext';
-import VideoCard from './Cards/VideoCard';
-import Preloader from './Preloader';
-import IVideo from '../ts/interfaces/IVideo';
-import getRandomVideos from '../service/getRandomVideos';
-import MainSection from './MainSection';
+import { RecipesContext } from '../../contexts/RecipesContext';
+import VideoCard from './../Cards/VideoCard';
+import Preloader from './../Preloader';
+import IVideo from '../../ts/interfaces/IVideo';
+import getRandomVideos from '../../service/getRandomVideos';
+import MainSection from './../Sections/MainSection';
 
 const RecipeVideos: React.FC = () => {
   const [videos, setVideos] = useState<IVideo[]>([]);

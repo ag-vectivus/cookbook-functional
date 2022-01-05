@@ -12,8 +12,8 @@ import Recipes from './pages/Recipes';
 import Sitemap from './pages/Sitemap';
 import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
-import StaticPageTemplate from './templates/StaticPageTemplate';
-import RecipePageTemplate from './templates/RecipePageTemplate';
+import StaticPage from './pages/StaticPage';
+import Recipe from './pages/Recipe';
 import SignIn from './modules/auth/SignIn';
 import SignUp from './modules/auth/SignUp';
 import ResetPassword from './modules/auth/ResetPassword';
@@ -30,17 +30,14 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="recipes" element={<Categories />} />
               <Route path="recipes/:category" element={<Recipes />} />
-              <Route
-                path="recipes/:category/:id"
-                element={<RecipePageTemplate />}
-              />
+              <Route path="recipes/:category/:id" element={<Recipe />} />
               <Route path="signin" element={<SignIn />} />
               <Route path="signup" element={<SignUp />} />
               <Route path="resetpassword" element={<ResetPassword />} />
               <Route path="contact" element={<Contact />} />
-              <Route path="about" element={<StaticPageTemplate />} />
-              <Route path="terms" element={<StaticPageTemplate />} />
-              <Route path="privacy" element={<StaticPageTemplate />} />
+              <Route path="about" element={<StaticPage />} />
+              <Route path="terms" element={<StaticPage />} />
+              <Route path="privacy" element={<StaticPage />} />
               <Route path="sitemap" element={<Sitemap />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -4,7 +4,7 @@ import IVideo from '../../ts/interfaces/IVideo';
 import pathParser from '../../helpers/pathParser';
 import setLinkPath from '../../service/setLinkPath';
 import VideoModal from '../VideoModal';
-import Image from '../Image/Image';
+import Image from '../Image';
 
 const VideoCard = (props: { video: IVideo; pulse: boolean }) => {
   const { id, name, videoId, category } = props.video;

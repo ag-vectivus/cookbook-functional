@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import showdown from 'showdown';
 import parse from 'html-react-parser';
-import MainSection from '../components/MainSection';
+import MainSection from '../components/Sections/MainSection';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 import endpoints from '../config/endpoints';
 import scrollToSelector from '../helpers/scrollToSelector';
 
-const StaticPageTemplate = () => {
+const StaticPage = () => {
   const [content, setContent] = useState('');
   const title: string = window.location.pathname.slice(1);
 
@@ -49,4 +49,4 @@ const StaticPageTemplate = () => {
   );
 };
 
-export default StaticPageTemplate;
+export default StaticPage;

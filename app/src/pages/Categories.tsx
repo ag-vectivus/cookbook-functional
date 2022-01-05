@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import endpoints from '../config/endpoints';
 import getData from '../api/getData';
 import IRecipeCard from '../ts/interfaces/IRecipeCard';
-import MainSection from '../components/MainSection';
+import MainSection from '../components/Sections/MainSection';
 import RecipeCard from '../components/Cards/RecipeCard';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';

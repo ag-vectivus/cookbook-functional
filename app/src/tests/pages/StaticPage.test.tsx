@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import StaticPageTemplate from '../../templates/StaticPageTemplate';
+import StaticPage from '../../pages/StaticPage';
 
-describe('StaticPageTemplate displays correctly', () => {
+describe('StaticPage displays correctly', () => {
   test('About', () => {
     global.window = Object.create(window);
     const url = '/about';
@@ -13,7 +13,7 @@ describe('StaticPageTemplate displays correctly', () => {
       writable: true,
     });
 
-    render(<StaticPageTemplate />);
+    render(<StaticPage />);
 
     const heading = screen.getByRole('heading', { name: /about/i });
     expect(heading).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe('StaticPageTemplate displays correctly', () => {
       writable: true,
     });
 
-    render(<StaticPageTemplate />);
+    render(<StaticPage />);
 
     const heading = screen.getByRole('heading', { name: /privacy/i });
     expect(heading).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe('StaticPageTemplate displays correctly', () => {
       writable: true,
     });
 
-    render(<StaticPageTemplate />);
+    render(<StaticPage />);
 
     const heading = screen.getByRole('heading', { name: /terms/i });
     expect(heading).toBeInTheDocument();

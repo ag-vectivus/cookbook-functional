@@ -3,7 +3,7 @@ import { RecipesContext } from '../contexts/RecipesContext';
 import IRecipe from '../ts/interfaces/IRecipe';
 import pathParser from '../helpers/pathParser';
 import scrollToSelector from '../helpers/scrollToSelector';
-import MainSection from '../components/MainSection';
+import MainSection from '../components/Sections/MainSection';
 import RecipeCard from '../components/Cards/RecipeCard';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';

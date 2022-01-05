@@ -1,5 +1,5 @@
 import React from 'react';
-import MainSection from '../components/MainSection';
+import MainSection from '../components/Sections/MainSection';
 import AuthEmail from '../components/Forms/AuthEmail';
 import AuthButton from '../components/Forms/AuthButton';
 

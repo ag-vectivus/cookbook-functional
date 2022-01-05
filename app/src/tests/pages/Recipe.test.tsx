@@ -6,9 +6,9 @@ import RecipesContextProvider, {
   RecipesContext,
 } from '../../contexts/RecipesContext';
 import allRecipes from '../../mocks/data/allRecipes.json';
-import RecipePageTemplate from '../../templates/RecipePageTemplate';
+import Recipe from '../../pages/Recipe';
 
-describe('RecipePageTemplate displays correctly', () => {
+describe('Recipe displays correctly', () => {
   test('No data provided', () => {
     global.window = Object.create(window);
     const url = '/recipes/seafood/mock';
@@ -22,7 +22,7 @@ describe('RecipePageTemplate displays correctly', () => {
     render(
       <RecipesContextProvider>
         <BrowserRouter>
-          <RecipePageTemplate />
+          <Recipe />
         </BrowserRouter>
       </RecipesContextProvider>
     );
@@ -50,7 +50,7 @@ describe('RecipePageTemplate displays correctly', () => {
     render(
       <RecipesContext.Provider value={{ recipes, dispatchRecipe }}>
         <BrowserRouter>
-          <RecipePageTemplate />
+          <Recipe />
         </BrowserRouter>
       </RecipesContext.Provider>
     );
@@ -97,7 +97,7 @@ describe('RecipePageTemplate displays correctly', () => {
     render(
       <RecipesContext.Provider value={{ recipes, dispatchRecipe }}>
         <BrowserRouter>
-          <RecipePageTemplate />
+          <Recipe />
         </BrowserRouter>
       </RecipesContext.Provider>
     );
