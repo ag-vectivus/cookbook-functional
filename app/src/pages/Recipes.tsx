@@ -8,9 +8,13 @@ import RecipeCard from '../components/Cards/RecipeCard';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 import NoData from '../components/NoData';
+import Pagination from '../modules/pagination/Pagination';
+import pagination from '../service/pagination';
 
 const Recipes = () => {
   const [content, setContent] = useState<IRecipe[]>([]);
+  const [paginationSelected, setPaginationSelected] = useState(1);
+  const [paginationPages, setPaginationPages] = useState(1);
   const { recipes } = useContext(RecipesContext);
 
   const category: string = pathParser(window.location.pathname).pop()!;
@@ -24,13 +28,18 @@ const Recipes = () => {
       const filteredRecipes: IRecipe[] = recipes.filter(
         (recipe) => recipe.category.toLowerCase() === category
       );
-      setContent(filteredRecipes);
+      const { currentItems, pages } = pagination(
+        filteredRecipes,
+        paginationSelected
+      );
+      setContent(currentItems);
+      setPaginationPages(pages);
     }
 
     return () => {
       setContent([]);
     };
-  }, [recipes]);
+  }, [recipes, paginationSelected]);
 
   return (
     <div className="container">
@@ -52,9 +61,11 @@ const Recipes = () => {
             <NoData />
           )}
         </div>
-        {recipes.forEach((element) => {
-          return <p>{element.name}</p>;
-        })}
+        <Pagination
+          pages={paginationPages}
+          selected={paginationSelected}
+          handleSelected={setPaginationSelected}
+        />
       </MainSection>
     </div>
   );

@@ -1,3 +1,3 @@
-const paginationItemsPerPage: number = 12;
+const paginationItemsPerPage = 12;
 
 export default paginationItemsPerPage;
