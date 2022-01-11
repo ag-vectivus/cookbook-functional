@@ -77,4 +77,16 @@ export const handlers = [
       })
     );
   }),
+
+  rest.post(`${endpoints.server}/newsletter`, (req, res, ctx) => {
+    const { email } = req.body;
+
+    const text = messages.NewsletterFormSuccess;
+    return res(
+      ctx.status(200),
+      ctx.json({
+        message: text,
+      })
+    );
+  }),
 ];

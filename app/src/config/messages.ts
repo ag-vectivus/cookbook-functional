@@ -5,6 +5,7 @@ enum messages {
   EmailNotAvailable = 'This email is not available. Please try again.',
   PasswordResetSuccess = 'Request sent successfully. Please check your email.',
   ContactFormSuccess = 'Your message has been sent successfully.',
+  NewsletterFormSuccess = 'Your have been subscribed successfully!',
 }
 
 export default messages;
