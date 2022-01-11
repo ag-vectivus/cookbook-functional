@@ -65,4 +65,16 @@ export const handlers = [
       })
     );
   }),
+
+  rest.post(`${endpoints.server}/contact`, (req, res, ctx) => {
+    const { name, email, subject, mssg } = req.body;
+
+    const text = messages.ContactFormSuccess;
+    return res(
+      ctx.status(200),
+      ctx.json({
+        message: text,
+      })
+    );
+  }),
 ];
