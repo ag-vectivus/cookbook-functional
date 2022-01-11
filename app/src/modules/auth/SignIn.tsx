@@ -9,7 +9,7 @@ import getData from '../../api/getData';
 import AuthFooter from '../../components/Forms/AuthFooter';
 import postCredentials from '../../api/postCredentials';
 
-const SignIn = () => {
+const SignIn = (): JSX.Element => {
   const title = 'sign in';
   const redirect = useNavigate();
 

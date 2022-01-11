@@ -8,7 +8,7 @@ import getData from '../../api/getData';
 import AuthFooter from '../../components/Forms/AuthFooter';
 import postCredentials from '../../api/postCredentials';
 
-const ResetPassword = () => {
+const ResetPassword = (): JSX.Element => {
   const title = 'reset password';
   const redirect = useNavigate();
 

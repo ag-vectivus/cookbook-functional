@@ -1,6 +1,6 @@
 import IRecipe from '../ts/interfaces/IRecipe';
 
-const ingredientsArray = (recipe: IRecipe, type: string) => {
+const ingredientsArray = (recipe: IRecipe, type: string): string[] => {
   const entries = Object.entries(recipe);
   const regexType = new RegExp('^' + type);
   const result: string[] = [];

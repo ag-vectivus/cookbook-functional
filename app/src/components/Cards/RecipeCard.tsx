@@ -6,7 +6,7 @@ import pathParser from '../../helpers/pathParser';
 import setLinkPath from '../../service/setLinkPath';
 import Image from '../Image';
 
-const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }) => {
+const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }): JSX.Element => {
   const { category, id, name, thumbnail } = props.recipe;
   const pathElements: string[] = pathParser(window.location.pathname);
   const url: string = setLinkPath(pathElements.length, category, id);

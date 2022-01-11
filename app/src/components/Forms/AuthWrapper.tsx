@@ -2,7 +2,10 @@ import React, { ReactNode } from 'react';
 import MainSection from '../Sections/MainSection';
 import AuthLinks from '../AuthLinks';
 
-const AuthWrapper = (props: { children: ReactNode; title: string }) => {
+const AuthWrapper = (props: {
+  children: ReactNode;
+  title: string;
+}): JSX.Element => {
   const { children, title } = props;
 
   return (

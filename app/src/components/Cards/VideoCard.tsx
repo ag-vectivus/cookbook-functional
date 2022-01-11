@@ -6,7 +6,7 @@ import setLinkPath from '../../service/setLinkPath';
 import VideoModal from '../VideoModal';
 import Image from '../Image';
 
-const VideoCard = (props: { video: IVideo; pulse: boolean }) => {
+const VideoCard = (props: { video: IVideo; pulse: boolean }): JSX.Element => {
   const { id, name, videoId, category } = props.video;
   const pathElements: string[] = pathParser(window.location.pathname);
   const url: string = setLinkPath(pathElements.length, category, id);

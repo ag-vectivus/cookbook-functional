@@ -11,7 +11,7 @@ import NoData from '../components/NoData';
 import Pagination from '../modules/pagination/Pagination';
 import pagination from '../service/pagination';
 
-const Recipes = () => {
+const Recipes = (): JSX.Element => {
   const [content, setContent] = useState<IRecipe[]>([]);
   const [paginationSelected, setPaginationSelected] = useState(1);
   const [paginationPages, setPaginationPages] = useState(1);

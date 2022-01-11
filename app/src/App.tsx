@@ -18,7 +18,7 @@ import SignIn from './modules/auth/SignIn';
 import SignUp from './modules/auth/SignUp';
 import ResetPassword from './modules/auth/ResetPassword';
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <div className="App">
       <RecipesContextProvider>
@@ -48,6 +48,6 @@ function App() {
       </RecipesContextProvider>
     </div>
   );
-}
+};
 
 export default App;

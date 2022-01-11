@@ -1,8 +1,12 @@
 import getVideoId from './getVideoId';
 import shuffleArray from '../helpers/shuffleArray';
 import IRecipe from '../ts/interfaces/IRecipe';
+import IVideo from '../ts/interfaces/IVideo';
 
-const getRandomVideos = (recipes: IRecipe[], numberOfVideosToGet: number) => {
+const getRandomVideos = (
+  recipes: IRecipe[],
+  numberOfVideosToGet: number
+): IVideo[] => {
   const recipesWithVideos: IRecipe[] = recipes.filter(
     ({ video }) => video !== null || undefined
   );

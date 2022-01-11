@@ -4,7 +4,7 @@ import M from 'materialize-css';
 import DesktopNav from './components/DesktopNav';
 import MobileNav from './components/MobileNav';
 
-const Navbar: React.FC = () => {
+const Navbar = (): JSX.Element => {
   useEffect(() => {
     M.AutoInit();
   }, []);

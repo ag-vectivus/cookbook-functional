@@ -6,7 +6,7 @@ import IPopularRecipe from '../../../ts/interfaces/IPopularRecipe';
 import endpoints from '../../../config/endpoints';
 import getData from '../../../api/getData';
 
-const AsidePopularRecipes = () => {
+const AsidePopularRecipes = (): JSX.Element => {
   const [popularRecipes, setPopularRecipes] = useState([]);
 
   useEffect(() => {

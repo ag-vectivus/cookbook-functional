@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NoData = () => {
+const NoData = (): JSX.Element => {
   return <p className="orange-text">There is no content yet.</p>;
 };
 

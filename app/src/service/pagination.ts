@@ -1,7 +1,12 @@
 import paginationItemsPerPage from '../config/paginationItemsPerPage';
 import IRecipe from '../ts/interfaces/IRecipe';
 
-const pagination = (recipes: IRecipe[], selected: number) => {
+type PaginationResult = {
+  currentItems: IRecipe[];
+  pages: number;
+};
+
+const pagination = (recipes: IRecipe[], selected: number): PaginationResult => {
   const pages = 0;
   const currentItems: IRecipe[] = recipes;
   const result = { currentItems, pages };

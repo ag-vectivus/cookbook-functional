@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AuthLinks = (props: { title: string }) => {
+const AuthLinks = (props: { title: string }): JSX.Element => {
   const { title } = props;
 
   return (

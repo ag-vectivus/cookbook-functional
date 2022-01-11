@@ -2,7 +2,7 @@ const setLinkPath = (
   pathElementsNumber: number,
   category: string,
   id: string
-) => {
+): string => {
   let url: string;
   pathElementsNumber === 1
     ? (url = `./${category}`)

@@ -7,7 +7,7 @@ import HelmetComponent from '../components/Helmet/HelmetComponent';
 import endpoints from '../config/endpoints';
 import scrollToSelector from '../helpers/scrollToSelector';
 
-const StaticPage = () => {
+const StaticPage = (): JSX.Element => {
   const [content, setContent] = useState('');
   const title: string = window.location.pathname.slice(1);
 

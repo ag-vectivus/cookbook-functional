@@ -3,7 +3,7 @@ import AsideAbout from './components/AsideAbout';
 import AsideNewsletter from './components/AsideNewsletter';
 import AsidePopularRecipes from './components/AsidePopularRecipes';
 
-const Aside = () => {
+const Aside = (): JSX.Element => {
   return (
     <aside className="aside">
       <AsideAbout />

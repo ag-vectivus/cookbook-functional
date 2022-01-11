@@ -2,7 +2,7 @@ import React from 'react';
 import endpoints from '../../config/endpoints';
 import FooterLinks from './components/FooterLinks';
 
-const Footer: React.FC = () => {
+const Footer = (): JSX.Element => {
   return (
     <React.Fragment>
       <div className="footer__border" />

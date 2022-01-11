@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AuthButton = (props: { title: string }) => {
+const AuthButton = (props: { title: string }): JSX.Element => {
   const { title } = props;
 
   return (

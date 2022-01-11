@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FooterLinks: React.FC = () => {
+const FooterLinks = (): JSX.Element => {
   return (
     <ul className="footer__links">
       <li>

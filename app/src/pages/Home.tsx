@@ -5,7 +5,7 @@ import RecipeLatest from '../components/Pages/RecipeLatest';
 import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 
-const Home: React.FC = () => {
+const Home = (): JSX.Element => {
   return (
     <div className="container">
       <HelmetComponent

@@ -9,7 +9,7 @@ import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 import scrollToSelector from '../helpers/scrollToSelector';
 
-const Sitemap = () => {
+const Sitemap = (): JSX.Element => {
   useEffect(() => {
     scrollToSelector('h4');
   }, []);

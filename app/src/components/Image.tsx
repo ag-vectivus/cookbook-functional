@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Image = (props: { src: string; alt?: string; className?: string }) => {
+const Image = (props: {
+  src: string;
+  alt?: string;
+  className?: string;
+}): JSX.Element => {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const { alt, src, className } = props;
 

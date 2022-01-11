@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import headerBackground from '../../assets/images/header-background.png';
 
-const Header: React.FC = () => {
+const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="header__border" />

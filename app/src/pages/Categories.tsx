@@ -8,7 +8,7 @@ import seo from '../config/seo';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 import scrollToSelector from '../helpers/scrollToSelector';
 
-const Categories = () => {
+const Categories = (): JSX.Element => {
   const [content, setContent] = useState<IRecipeCard[]>([]);
 
   useEffect(() => {

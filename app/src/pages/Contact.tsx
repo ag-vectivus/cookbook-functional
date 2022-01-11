@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MainSection from '../components/Sections/MainSection';
 import AuthEmail from '../components/Forms/AuthEmail';
 import AuthButton from '../components/Forms/AuthButton';
 
-const Contact = () => {
+const Contact = (): JSX.Element => {
+  const [email, setEmail] = useState('');
+
   return (
     <div className="container">
       <MainSection title="contact">
@@ -14,7 +16,7 @@ const Contact = () => {
               <input id="name" type="text" className="validate" />
               <label htmlFor="name">Name</label>
             </div>
-            <AuthEmail />
+            <AuthEmail handleChildData={setEmail} />
             <div className="input-field">
               <i className="material-icons prefix">title</i>
               <input id="subject" type="text" className="validate" />

@@ -1,6 +1,7 @@
 import React from 'react';
+import AuthProps from '../../ts/types/AuthProps';
 
-const AuthPassword = ({ ...props }) => {
+const AuthPassword = ({ ...props }: AuthProps): JSX.Element => {
   const handleChange = (e: React.FormEvent) => {
     const target = e.target as HTMLInputElement;
     props.handleChildData(target.value);

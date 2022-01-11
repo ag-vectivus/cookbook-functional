@@ -4,7 +4,7 @@ import AsideSection from '../../../components/Sections/AsideSection';
 import Image from '../../../components/Image';
 import aboutImage from '../../../assets/images/about.jpg';
 
-const AsideAbout = () => {
+const AsideAbout = (): JSX.Element => {
   return (
     <AsideSection title="About">
       <div className="row">

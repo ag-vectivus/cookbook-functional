@@ -2,7 +2,13 @@ import React from 'react';
 import makeArrayFromNumber from '../../helpers/makeArrayFromNumber';
 import paginationEventHandler from '../../service/paginationEventHandler';
 
-const Pagination = ({ ...props }) => {
+type PaginationProps = {
+  pages: number;
+  selected: number;
+  handleSelected: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const Pagination = ({ ...props }): JSX.Element => {
   const { pages, selected } = props;
 
   const pagesArray = makeArrayFromNumber(pages);

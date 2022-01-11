@@ -5,7 +5,7 @@ import pathParser from '../helpers/pathParser';
 import setLinkPath from '../service/setLinkPath';
 import IPopularRecipe from '../ts/interfaces/IPopularRecipe';
 
-const PopularRecipe = (props: { recipe: IPopularRecipe }) => {
+const PopularRecipe = (props: { recipe: IPopularRecipe }): JSX.Element => {
   const { id, name, thumbnail, category, views } = props.recipe;
   const pathElements: string[] = pathParser(window.location.pathname);
   const url: string = setLinkPath(pathElements.length, category, id);

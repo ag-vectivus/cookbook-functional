@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import navBackground from '../../../assets/images/nav-background.png';
 
-const MobileNav: React.FC = () => {
+const MobileNav = (): JSX.Element => {
   const { auth, dispatchAuth } = useContext(AuthContext);
 
   const logOut = (): void => {

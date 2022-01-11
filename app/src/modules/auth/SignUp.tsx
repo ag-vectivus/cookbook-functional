@@ -11,7 +11,7 @@ import messages from '../../config/messages';
 import AuthFooter from '../../components/Forms/AuthFooter';
 import postCredentials from '../../api/postCredentials';
 
-const SignUp = () => {
+const SignUp = (): JSX.Element => {
   const title = 'sign up';
   const redirect = useNavigate();
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 
-const DesktopNav: React.FC = () => {
+const DesktopNav = (): JSX.Element => {
   const { auth, dispatchAuth } = useContext(AuthContext);
 
   const logOut = (): void => {

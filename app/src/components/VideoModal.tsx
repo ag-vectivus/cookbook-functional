@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import M from 'materialize-css';
 import IVideo from '../ts/interfaces/IVideo';
 
-const VideoModal: React.FC<{ recipe: IVideo }> = ({ recipe }) => {
+const VideoModal: React.FC<{ recipe: IVideo }> = ({ recipe }): JSX.Element => {
   const { id, name, videoId } = recipe;
 
   useEffect(() => {

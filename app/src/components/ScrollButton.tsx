@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ScrollButton = () => {
+const ScrollButton = (): JSX.Element => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {

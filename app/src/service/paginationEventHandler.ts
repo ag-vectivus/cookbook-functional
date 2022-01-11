@@ -2,7 +2,7 @@ const paginationEventHandler = (
   order: string,
   selected: number,
   pages: number[]
-) => {
+): number => {
   const { length } = pages;
   const actions = {
     first_page: 1,

@@ -1,7 +1,7 @@
 import React from 'react';
 import AsideSection from '../../../components/Sections/AsideSection';
 
-const AsideNewsletter = () => {
+const AsideNewsletter = (): JSX.Element => {
   return (
     <AsideSection title="Never miss a recipe!">
       <div className="row">

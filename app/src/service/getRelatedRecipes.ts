@@ -5,7 +5,7 @@ const getRelatedRecipes = (
   recipes: IRecipe[],
   currentRecipeCategory: string,
   currentRecipeId: string
-) => {
+): IRecipe[] => {
   const filteredRecipes: IRecipe[] = recipes
     .filter(
       (recipe) =>

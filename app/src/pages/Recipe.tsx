@@ -15,7 +15,7 @@ import RecipeShareButtons from '../components/Recipe/RecipeShareButtons';
 import HelmetComponent from '../components/Helmet/HelmetComponent';
 import seo from '../config/seo';
 
-const Recipe = () => {
+const Recipe = (): JSX.Element => {
   const { recipes } = useContext(RecipesContext);
   const [recipe, setRecipe] = useState<IRecipe>(null!);
   const [recipeId, setRecipeId] = useState('');

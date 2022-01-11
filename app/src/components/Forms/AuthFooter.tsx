@@ -1,7 +1,12 @@
 import React from 'react';
 import AuthButton from './AuthButton';
 
-const AuthFooter = ({ ...props }) => {
+type Props = {
+  title: string;
+  message: string;
+};
+
+const AuthFooter = ({ ...props }: Props): JSX.Element => {
   const { title, message } = props;
   return (
     <div className="row valign-wrapper">
