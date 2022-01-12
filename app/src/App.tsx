@@ -17,6 +17,7 @@ import Recipe from './pages/Recipe';
 import SignIn from './modules/auth/SignIn';
 import SignUp from './modules/auth/SignUp';
 import ResetPassword from './modules/auth/ResetPassword';
+import UserSettings from './modules/userSettings/UserSettings';
 
 const App = (): JSX.Element => {
   return (
@@ -34,6 +35,7 @@ const App = (): JSX.Element => {
               <Route path="signin" element={<SignIn />} />
               <Route path="signup" element={<SignUp />} />
               <Route path="resetpassword" element={<ResetPassword />} />
+              <Route path="settings" element={<UserSettings />} />
               <Route path="contact" element={<Contact />} />
               <Route path="about" element={<StaticPage />} />
               <Route path="terms" element={<StaticPage />} />

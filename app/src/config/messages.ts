@@ -6,6 +6,10 @@ enum messages {
   PasswordResetSuccess = 'Request sent successfully. Please check your email.',
   ContactFormSuccess = 'Your message has been sent successfully.',
   NewsletterFormSuccess = 'Your have been subscribed successfully!',
+  ValuesNotEqual = 'Given values are not equal. Try again.',
+  EmailChangeSuccess = 'Your email has been changed successfully!',
+  PasswordChangeSuccess = 'Your password has been changed successfully!',
+  AccountDeleted = 'Your has been deleted!',
 }
 
 export default messages;

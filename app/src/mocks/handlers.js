@@ -89,4 +89,28 @@ export const handlers = [
       })
     );
   }),
+
+  rest.post(`${endpoints.server}/settings`, (req, res, ctx) => {
+    const { order } = req.body;
+
+    let text;
+    switch (order) {
+      case 'email':
+        text = messages.EmailChangeSuccess;
+        break;
+      case 'password':
+        text = messages.PasswordChangeSuccess;
+        break;
+      default:
+        text = messages.AccountDeleted;
+        break;
+    }
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        message: text,
+      })
+    );
+  }),
 ];

@@ -17,7 +17,9 @@ const AuthPassword = ({ ...props }: AuthProps): JSX.Element => {
         onChange={(e) => handleChange(e)}
         required
       />
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password">
+        {props.label !== undefined ? props.label : 'Password'}
+      </label>
     </div>
   );
 };

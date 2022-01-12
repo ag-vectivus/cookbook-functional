@@ -17,7 +17,9 @@ const AuthEmail = ({ ...props }: AuthProps): JSX.Element => {
         onChange={(e) => handleChange(e)}
         required
       />
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email">
+        {props.label !== undefined ? props.label : 'Email'}
+      </label>
     </div>
   );
 };
