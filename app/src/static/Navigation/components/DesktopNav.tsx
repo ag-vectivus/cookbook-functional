@@ -15,9 +15,15 @@ const DesktopNav = (): JSX.Element => {
         <li>
           <Link to="/recipes">Recipes</Link>
         </li>
+        {auth.uid === 'init' ? null : (
+          <li>
+            <Link to="/myrecipes">My Recipes</Link>
+          </li>
+        )}
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+
         <li>
           {auth.uid === 'init' ? (
             <React.Fragment>
@@ -37,14 +43,23 @@ const DesktopNav = (): JSX.Element => {
               </Link>
             </React.Fragment>
           ) : (
-            <Link
-              to="/"
-              className="btn-floating btn-small waves-effect waves-light orange darken-2 tooltipped"
-              data-tooltip="Log out"
-              onClick={logOut}
-            >
-              <span className="material-icons">logout</span>
-            </Link>
+            <React.Fragment>
+              <Link
+                to="/settings"
+                className="btn-floating btn-small waves-effect waves-light orange darken-2 tooltipped"
+                data-tooltip="Settings"
+              >
+                <span className="material-icons">manage_accounts</span>
+              </Link>
+              <Link
+                to="/"
+                className="btn-floating btn-small waves-effect waves-light orange darken-2 tooltipped"
+                data-tooltip="Log out"
+                onClick={logOut}
+              >
+                <span className="material-icons">logout</span>
+              </Link>
+            </React.Fragment>
           )}
         </li>
       </ul>

@@ -24,6 +24,13 @@ const MobileNav = (): JSX.Element => {
           <span className="white-text">Recipes</span>
         </Link>
       </li>
+      {auth.uid === 'init' ? null : (
+        <li>
+          <Link to="/myrecipes">
+            <span className="white-text">My Recipes</span>
+          </Link>
+        </li>
+      )}
       <li>
         <Link to="/contact">
           <span className="white-text">Contact</span>
@@ -44,11 +51,18 @@ const MobileNav = (): JSX.Element => {
           </li>
         </React.Fragment>
       ) : (
-        <li>
-          <Link to="/" onClick={logOut}>
-            <span className="deep-orange-text">Log Out</span>
-          </Link>
-        </li>
+        <React.Fragment>
+          <li>
+            <Link to="/settings">
+              <span className="deep-orange-text">Settings</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/" onClick={logOut}>
+              <span className="deep-orange-text">Log Out</span>
+            </Link>
+          </li>
+        </React.Fragment>
       )}
     </ul>
   );
