@@ -48,7 +48,8 @@
       "measure19": "",
       "measure20": "",
       "source": "https://www.bbcgoodfood.com/recipes/2907669/easy-pancakes",
-      "author": null,
+      "author": "Spock",
+      "authorUID": "208s765s9823",
       "date": "Wed Dec 23 2020 14:08:01 GMT+0100"
     },
     {
@@ -100,6 +101,7 @@
       "measure20": "",
       "source": "https://www.bbcgoodfood.com/recipes/1837/canadian-butter-tarts",
       "author": null,
+      "authorUID": null,
       "date": "Thu Apr 22 2018 00:15:23 GMT+0200"
     },
     {
@@ -150,7 +152,8 @@
       "measure19": " ",
       "measure20": " ",
       "source": "https://www.thespruceeats.com/polish-herrings-in-oil-recipe-1135618",
-      "author": null,
+      "author": "Spock",
+      "authorUID": "208s765s9823",
       "date": "Thu Jul 29 2019 21:24:52 GMT+0200"
     },
     {
@@ -201,7 +204,8 @@
       "measure19": "",
       "measure20": "",
       "source": "https://www.bbcgoodfood.com/recipes/5816/hot-chocolate-souffls-with-chocolate-cream-sauce",
-      "author": null,
+      "author": "Kirk",
+      "authorUID": "208d765d9823",
       "date": "Thu May 20 2021 09:22:12 GMT+0200"
     }
   ]

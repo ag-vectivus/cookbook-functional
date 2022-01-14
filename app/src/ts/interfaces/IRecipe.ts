@@ -47,5 +47,6 @@ export default interface IRecipe {
   measure20: string;
   source: string;
   author: string | null;
+  authorUID: string | null;
   date: string | Date;
 }
