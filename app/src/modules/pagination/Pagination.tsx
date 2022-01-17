@@ -35,10 +35,11 @@ const Pagination = ({ ...props }): JSX.Element => {
               <i className="material-icons">chevron_left</i>
             </a>
           </li>
-          {pagesArray.map((page) => {
+          {pagesArray.map((page, index) => {
             return (
               <li
                 className={`${page !== selected ? 'waves-effect' : 'active'}`}
+                key={`pagination-button-${index}`}
               >
                 <a href="#!" onClick={(e) => handleChange(e)}>
                   {page}
