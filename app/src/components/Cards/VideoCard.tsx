@@ -29,7 +29,11 @@ const VideoCard = (props: { video: IVideo; pulse: boolean }): JSX.Element => {
         </a>
       </div>
       <div className="main__caption center-align card-action truncate">
-        <Link to={url} className="orange-text text-darken-4">
+        <Link
+          to={url}
+          className="orange-text text-darken-4"
+          data-testid="video-modal-link"
+        >
           {name}
         </Link>
       </div>
