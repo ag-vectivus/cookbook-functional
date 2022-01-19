@@ -13,7 +13,11 @@ const RecipeCard = (props: { recipe: IRecipe | IRecipeCard }): JSX.Element => {
 
   return (
     <div className="card">
-      <Link to={url} className="white-text truncate center-align">
+      <Link
+        to={url}
+        className="white-text truncate center-align"
+        data-testid="recipe-card-link"
+      >
         <div className="card-image">
           <Image alt={`Dish: ${name}`} src={thumbnail} />
         </div>
