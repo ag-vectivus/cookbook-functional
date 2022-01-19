@@ -27,3 +27,7 @@ yarn-error.log*
 .eslintcache
 .eslintrc.json
 prettier.config.js
+
+app/cypress/fixtures/example.json
+app/cypress/integration/1-getting-started
+app/cypress/integration/2-advanced-examples
