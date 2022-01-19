@@ -17,7 +17,9 @@ const DesktopNav = (): JSX.Element => {
         </li>
         {auth.uid === 'init' ? null : (
           <li>
-            <Link to="/myrecipes">My Recipes</Link>
+            <Link to="/myrecipes" data-testid="desktop-nav-my-recipes">
+              My Recipes
+            </Link>
           </li>
         )}
         <li>
