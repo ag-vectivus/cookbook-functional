@@ -13,7 +13,9 @@ const DesktopNav = (): JSX.Element => {
     <React.Fragment>
       <ul className="right hide-on-med-and-down" data-testid="desktop-nav">
         <li>
-          <Link to="/recipes">Recipes</Link>
+          <Link to="/recipes" data-testid="desktop-nav-recipes">
+            Recipes
+          </Link>
         </li>
         {auth.uid === 'init' ? null : (
           <li>

@@ -21,7 +21,7 @@ const PopularRecipe = (props: { recipe: IPopularRecipe }): JSX.Element => {
         alt={`miniature: ${name}`}
         className="circle materialboxed"
       />
-      <Link to={url}>
+      <Link to={url} data-testid="popular-recipe">
         <span className="title orange-text text-darken-4 truncate">{name}</span>
       </Link>
       <p className="orange-text text-darken-4 truncate">{`views: ${views}`}</p>
