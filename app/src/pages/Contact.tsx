@@ -3,10 +3,11 @@ import MainSection from '../components/Sections/MainSection';
 import postCredentials from '../api/postCredentials';
 import getData from '../api/getData';
 import endpoints from '../config/endpoints';
-import AuthFooter from '../components/Forms/AuthFooter';
+import FormFooter from '../components/Forms/FormFooter';
 import formProps from '../config/formProps';
 import IInputProps from '../ts/interfaces/IInputProps';
 import FormInput from '../components/Forms/FormInput';
+import IFormFooterProps from '../ts/interfaces/IFormFooterProps';
 
 const Contact = (): JSX.Element => {
   const [name, setName] = useState('');
@@ -28,6 +29,7 @@ const Contact = (): JSX.Element => {
     handleData: setEmail,
     ...formProps.email,
   };
+  const footerProps: IFormFooterProps = { title: 'send', message };
 
   return (
     <div className="container">
@@ -70,7 +72,7 @@ const Contact = (): JSX.Element => {
               />
               <label htmlFor="textarea">Your message...</label>
             </div>
-            <AuthFooter title="send" message={message} />
+            <FormFooter formFooterProps={footerProps} />
           </form>
         </div>
       </MainSection>

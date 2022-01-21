@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AuthFooter from '../../components/Forms/AuthFooter';
+import FormFooter from '../../components/Forms/FormFooter';
 import FormInput from '../../components/Forms/FormInput';
 import getData from '../../api/getData';
 import postCredentials from '../../api/postCredentials';
@@ -10,13 +10,13 @@ import labels from '../../config/labels';
 import isStrictEqual from '../../helpers/isStrictEqual';
 import IAuth from '../../ts/interfaces/IAuth';
 import IInputProps from '../../ts/interfaces/IInputProps';
+import IFormFooterProps from '../../ts/interfaces/IFormFooterProps';
 
 const ChangeMail = (props: { auth: IAuth }): JSX.Element => {
   const [email, setEmail] = useState('');
   const [repeatedEmail, setRepeatedEmail] = useState('');
   const [message, setMessage] = useState('');
   const { uid } = props.auth;
-  const title = 'confirm';
 
   useEffect(() => {
     setMessage('');
@@ -46,6 +46,7 @@ const ChangeMail = (props: { auth: IAuth }): JSX.Element => {
     ...formProps.email,
     label: labels.email[1],
   };
+  const footerProps: IFormFooterProps = { title: 'confirm', message };
 
   return (
     <li>
@@ -61,7 +62,7 @@ const ChangeMail = (props: { auth: IAuth }): JSX.Element => {
           >
             <FormInput inputProps={emailProps} />
             <FormInput inputProps={repeatedEmailProps} />
-            <AuthFooter title={title} message={message} />
+            <FormFooter formFooterProps={footerProps} />
           </form>
         </div>
       </div>

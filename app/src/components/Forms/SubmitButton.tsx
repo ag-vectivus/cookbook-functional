@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AuthButton = (props: { title: string }): JSX.Element => {
+const SubmitButton = (props: { title: string }): JSX.Element => {
   const { title } = props;
 
   return (
@@ -13,4 +13,4 @@ const AuthButton = (props: { title: string }): JSX.Element => {
   );
 };
 
-export default AuthButton;
+export default SubmitButton;

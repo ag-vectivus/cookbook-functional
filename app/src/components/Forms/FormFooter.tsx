@@ -1,17 +1,16 @@
 import React from 'react';
-import AuthButton from './AuthButton';
+import IFormFooterProps from '../../ts/interfaces/IFormFooterProps';
+import SubmitButton from './SubmitButton';
 
-type Props = {
-  title: string;
-  message: string;
-};
+const FormFooter = (props: {
+  formFooterProps: IFormFooterProps;
+}): JSX.Element => {
+  const { title, message } = props.formFooterProps;
 
-const AuthFooter = ({ ...props }: Props): JSX.Element => {
-  const { title, message } = props;
   return (
     <div className="row valign-wrapper">
       <div className="col s6">
-        <AuthButton title={title} />
+        <SubmitButton title={title} />
       </div>
       <div className="col s6 orange-text text-darken-4">
         {message.length > 0 ? (
@@ -22,4 +21,4 @@ const AuthFooter = ({ ...props }: Props): JSX.Element => {
   );
 };
 
-export default AuthFooter;
+export default FormFooter;

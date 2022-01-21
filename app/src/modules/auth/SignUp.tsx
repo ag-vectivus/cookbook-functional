@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
-import AuthFooter from '../../components/Forms/AuthFooter';
+import FormFooter from '../../components/Forms/FormFooter';
 import FormInput from '../../components/Forms/FormInput';
 import getData from '../../api/getData';
 import postCredentials from '../../api/postCredentials';
@@ -10,17 +10,16 @@ import endpoints from '../../config/endpoints';
 import formProps from '../../config/formProps';
 import messages from '../../config/messages';
 import IInputProps from '../../ts/interfaces/IInputProps';
+import IFormFooterProps from '../../ts/interfaces/IFormFooterProps';
 
 const SignUp = (): JSX.Element => {
-  const title = 'sign up';
   const redirect = useNavigate();
-
   const [login, setLogin] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-
   const { auth } = useContext(AuthContext);
+  const title = 'sign up';
 
   useEffect(() => {
     if (auth.uid !== 'init') {
@@ -55,6 +54,7 @@ const SignUp = (): JSX.Element => {
     handleData: setPassword,
     ...formProps.password,
   };
+  const footerProps: IFormFooterProps = { title, message };
 
   return (
     <AuthWrapper title={title}>
@@ -65,7 +65,7 @@ const SignUp = (): JSX.Element => {
         <FormInput inputProps={loginProps} />
         <FormInput inputProps={emailProps} />
         <FormInput inputProps={passwordProps} />
-        <AuthFooter title={title} message={message} />
+        <FormFooter formFooterProps={footerProps} />
       </form>
     </AuthWrapper>
   );

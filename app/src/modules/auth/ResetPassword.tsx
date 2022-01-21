@@ -2,22 +2,21 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
-import AuthFooter from '../../components/Forms/AuthFooter';
+import FormFooter from '../../components/Forms/FormFooter';
 import FormInput from '../../components/Forms/FormInput';
 import endpoints from '../../config/endpoints';
 import formProps from '../../config/formProps';
 import getData from '../../api/getData';
 import postCredentials from '../../api/postCredentials';
 import IInputProps from '../../ts/interfaces/IInputProps';
+import IFormFooterProps from '../../ts/interfaces/IFormFooterProps';
 
 const ResetPassword = (): JSX.Element => {
-  const title = 'reset password';
   const redirect = useNavigate();
-
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
   const { auth } = useContext(AuthContext);
+  const title = 'reset password';
 
   useEffect(() => {
     if (auth.uid !== 'init') {
@@ -29,16 +28,16 @@ const ResetPassword = (): JSX.Element => {
     setMessage('');
   }, [email]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     const credentials = postCredentials({ email });
-
     getData(`${endpoints.server}/resetpassword`, credentials)
       .then((res) => setMessage(res.message))
       .catch((err) => setMessage(err.message));
   };
 
   const emailProps: IInputProps = { handleData: setEmail, ...formProps.email };
+  const footerProps: IFormFooterProps = { title, message };
 
   return (
     <AuthWrapper title={title}>
@@ -47,7 +46,7 @@ const ResetPassword = (): JSX.Element => {
         onSubmit={(e: React.FormEvent) => handleSubmit(e)}
       >
         <FormInput inputProps={emailProps} />
-        <AuthFooter title={title} message={message} />
+        <FormFooter formFooterProps={footerProps} />
       </form>
     </AuthWrapper>
   );

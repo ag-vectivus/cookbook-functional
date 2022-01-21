@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import getData from '../../api/getData';
-import AuthFooter from '../../components/Forms/AuthFooter';
+import FormFooter from '../../components/Forms/FormFooter';
 import FormInput from '../../components/Forms/FormInput';
 import endpoints from '../../config/endpoints';
 import formProps from '../../config/formProps';
@@ -10,13 +10,13 @@ import postCredentials from '../../api/postCredentials';
 import isStrictEqual from '../../helpers/isStrictEqual';
 import IAuth from '../../ts/interfaces/IAuth';
 import IInputProps from '../../ts/interfaces/IInputProps';
+import IFormFooterProps from '../../ts/interfaces/IFormFooterProps';
 
 const ChangePassword = (props: { auth: IAuth }): JSX.Element => {
   const [password, setPassword] = useState('');
   const [repeated, setRepeated] = useState('');
   const [message, setMessage] = useState('');
   const { uid } = props.auth;
-  const title = 'confirm';
 
   useEffect(() => {
     setMessage('');
@@ -46,6 +46,7 @@ const ChangePassword = (props: { auth: IAuth }): JSX.Element => {
     ...formProps.password,
     label: labels.password[1],
   };
+  const footerProps: IFormFooterProps = { title: 'confirm', message };
 
   return (
     <li>
@@ -61,7 +62,7 @@ const ChangePassword = (props: { auth: IAuth }): JSX.Element => {
           >
             <FormInput inputProps={passwordProps} />
             <FormInput inputProps={repeatedProps} />
-            <AuthFooter title={title} message={message} />
+            <FormFooter formFooterProps={footerProps} />
           </form>
         </div>
       </div>
