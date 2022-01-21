@@ -14,13 +14,22 @@ const FormInput = (props: { inputProps: IInputProps }): JSX.Element => {
       {icon !== undefined ? (
         <i className="material-icons prefix">{icon}</i>
       ) : null}
-      <input
-        id={id}
-        type={type}
-        className="validate"
-        onChange={(e) => handleChange(e)}
-        required
-      />
+      {id !== 'textarea' ? (
+        <input
+          id={id}
+          type={type}
+          className="validate"
+          onChange={(e) => handleChange(e)}
+          required
+        />
+      ) : (
+        <textarea
+          id={id}
+          className="materialize-textarea"
+          onChange={(e) => handleChange(e)}
+          required
+        />
+      )}
       <label htmlFor={id}>{label}</label>
     </div>
   );

@@ -25,9 +25,21 @@ const Contact = (): JSX.Element => {
       .catch((err) => setMessage(err.message));
   };
 
+  const nameProps: IInputProps = {
+    handleData: setName,
+    ...formProps.name,
+  };
   const emailProps: IInputProps = {
     handleData: setEmail,
     ...formProps.email,
+  };
+  const subjectProps: IInputProps = {
+    handleData: setSubject,
+    ...formProps.subject,
+  };
+  const userMessageProps: IInputProps = {
+    handleData: setMssg,
+    ...formProps.userMessage,
   };
   const footerProps: IFormFooterProps = { title: 'send', message };
 
@@ -39,39 +51,10 @@ const Contact = (): JSX.Element => {
             className="col s12 push-m2 m8 push-xl3 xl6"
             onSubmit={handleSubmit}
           >
-            <div className="input-field">
-              <i className="material-icons prefix">portrait</i>
-              <input
-                id="name"
-                type="text"
-                className="validate"
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <label htmlFor="name">Name</label>
-            </div>
+            <FormInput inputProps={nameProps} />
             <FormInput inputProps={emailProps} />
-            <div className="input-field">
-              <i className="material-icons prefix">title</i>
-              <input
-                id="subject"
-                type="text"
-                className="validate"
-                onChange={(e) => setSubject(e.target.value)}
-                required
-              />
-              <label htmlFor="subject">Subject</label>
-            </div>
-            <div className="input-field">
-              <i className="material-icons prefix">subject</i>
-              <textarea
-                id="textarea"
-                className="materialize-textarea"
-                onChange={(e) => setMssg(e.target.value)}
-                required
-              />
-              <label htmlFor="textarea">Your message...</label>
-            </div>
+            <FormInput inputProps={subjectProps} />
+            <FormInput inputProps={userMessageProps} />
             <FormFooter formFooterProps={footerProps} />
           </form>
         </div>
