@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import MainSection from '../components/Sections/MainSection';
-import AuthEmail from '../components/Forms/AuthEmail';
-import AuthButton from '../components/Forms/AuthButton';
 import postCredentials from '../api/postCredentials';
 import getData from '../api/getData';
 import endpoints from '../config/endpoints';
 import AuthFooter from '../components/Forms/AuthFooter';
+import formProps from '../config/formProps';
+import IInputProps from '../ts/interfaces/IInputProps';
+import FormInput from '../components/Forms/FormInput';
 
 const Contact = (): JSX.Element => {
   const [name, setName] = useState('');
@@ -21,6 +22,11 @@ const Contact = (): JSX.Element => {
     getData(`${endpoints.server}/contact`, contactFormMessage)
       .then((res) => setMessage(res.message))
       .catch((err) => setMessage(err.message));
+  };
+
+  const emailProps: IInputProps = {
+    handleData: setEmail,
+    ...formProps.email,
   };
 
   return (
@@ -42,7 +48,7 @@ const Contact = (): JSX.Element => {
               />
               <label htmlFor="name">Name</label>
             </div>
-            <AuthEmail handleChildData={setEmail} />
+            <FormInput inputProps={emailProps} />
             <div className="input-field">
               <i className="material-icons prefix">title</i>
               <input

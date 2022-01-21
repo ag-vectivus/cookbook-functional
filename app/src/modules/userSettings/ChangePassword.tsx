@@ -1,40 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import getData from '../../api/getData';
-import postCredentials from '../../api/postCredentials';
 import AuthFooter from '../../components/Forms/AuthFooter';
-import AuthPassword from '../../components/Forms/AuthPassword';
+import FormInput from '../../components/Forms/FormInput';
 import endpoints from '../../config/endpoints';
+import formProps from '../../config/formProps';
 import messages from '../../config/messages';
+import labels from '../../config/labels';
+import postCredentials from '../../api/postCredentials';
 import isStrictEqual from '../../helpers/isStrictEqual';
 import IAuth from '../../ts/interfaces/IAuth';
+import IInputProps from '../../ts/interfaces/IInputProps';
 
 const ChangePassword = (props: { auth: IAuth }): JSX.Element => {
   const [password, setPassword] = useState('');
-  const [repeatedPassword, setRepeatedPassword] = useState('');
+  const [repeated, setRepeated] = useState('');
   const [message, setMessage] = useState('');
-
-  const title = 'confirm';
-  const order = 'password';
-  const labels: [string, string] = ['New password', 'Repeat new password'];
   const { uid } = props.auth;
+  const title = 'confirm';
 
   useEffect(() => {
     setMessage('');
-  }, [password, repeatedPassword]);
+  }, [password, repeated]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const compare = isStrictEqual(password, repeatedPassword);
-
+    const compare = isStrictEqual(password, repeated);
     if (compare) {
-      const credentials = postCredentials({ uid, password, order });
+      const credentials = postCredentials({ uid, password, order: 'password' });
       getData(`${endpoints.server}/settings`, credentials)
         .then((res) => setMessage(res.message))
         .catch((err) => setMessage(err.message));
     } else {
       setMessage(messages.ValuesNotEqual);
     }
+  };
+
+  const passwordProps: IInputProps = {
+    handleData: setPassword,
+    ...formProps.password,
+    label: labels.password[0],
+  };
+  const repeatedProps: IInputProps = {
+    handleData: setRepeated,
+    ...formProps.password,
+    label: labels.password[1],
   };
 
   return (
@@ -49,11 +59,8 @@ const ChangePassword = (props: { auth: IAuth }): JSX.Element => {
             className="col auth__form"
             onSubmit={(e: React.FormEvent) => handleSubmit(e)}
           >
-            <AuthPassword handleChildData={setPassword} label={labels[0]} />
-            <AuthPassword
-              handleChildData={setRepeatedPassword}
-              label={labels[1]}
-            />
+            <FormInput inputProps={passwordProps} />
+            <FormInput inputProps={repeatedProps} />
             <AuthFooter title={title} message={message} />
           </form>
         </div>

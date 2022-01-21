@@ -2,14 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
-import AuthPassword from '../../components/Forms/AuthPassword';
-import AuthEmail from '../../components/Forms/AuthEmail';
-import AuthLogin from '../../components/Forms/AuthLogin';
-import endpoints from '../../config/endpoints';
-import getData from '../../api/getData';
-import messages from '../../config/messages';
 import AuthFooter from '../../components/Forms/AuthFooter';
+import FormInput from '../../components/Forms/FormInput';
+import getData from '../../api/getData';
 import postCredentials from '../../api/postCredentials';
+import endpoints from '../../config/endpoints';
+import formProps from '../../config/formProps';
+import messages from '../../config/messages';
+import IInputProps from '../../ts/interfaces/IInputProps';
 
 const SignUp = (): JSX.Element => {
   const title = 'sign up';
@@ -20,7 +20,7 @@ const SignUp = (): JSX.Element => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
-  const { auth, dispatchAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
 
   useEffect(() => {
     if (auth.uid !== 'init') {
@@ -49,15 +49,22 @@ const SignUp = (): JSX.Element => {
       .catch((err) => setMessage(err.message));
   };
 
+  const loginProps: IInputProps = { handleData: setLogin, ...formProps.login };
+  const emailProps: IInputProps = { handleData: setEmail, ...formProps.email };
+  const passwordProps: IInputProps = {
+    handleData: setPassword,
+    ...formProps.password,
+  };
+
   return (
     <AuthWrapper title={title}>
       <form
         className="col s12 push-m2 m8 push-xl3 xl6 auth__form"
         onSubmit={(e: React.FormEvent) => handleSubmit(e)}
       >
-        <AuthLogin handleChildData={setLogin} />
-        <AuthEmail handleChildData={setEmail} />
-        <AuthPassword handleChildData={setPassword} />
+        <FormInput inputProps={loginProps} />
+        <FormInput inputProps={emailProps} />
+        <FormInput inputProps={passwordProps} />
         <AuthFooter title={title} message={message} />
       </form>
     </AuthWrapper>

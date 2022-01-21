@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import AuthWrapper from '../../components/Forms/AuthWrapper';
-import AuthPassword from '../../components/Forms/AuthPassword';
-import AuthEmail from '../../components/Forms/AuthEmail';
+import AuthFooter from '../../components/Forms/AuthFooter';
+import FormInput from '../../components/Forms/FormInput';
+import formProps from '../../config/formProps';
 import endpoints from '../../config/endpoints';
 import getData from '../../api/getData';
-import AuthFooter from '../../components/Forms/AuthFooter';
 import postCredentials from '../../api/postCredentials';
+import IInputProps from '../../ts/interfaces/IInputProps';
 
 const SignIn = (): JSX.Element => {
   const title = 'sign in';
@@ -39,14 +40,20 @@ const SignIn = (): JSX.Element => {
       .catch((err) => setMessage(err.message));
   };
 
+  const emailProps: IInputProps = { handleData: setEmail, ...formProps.email };
+  const passwordProps: IInputProps = {
+    handleData: setPassword,
+    ...formProps.password,
+  };
+
   return (
     <AuthWrapper title={title}>
       <form
         className="col s12 push-m2 m8 push-xl3 xl6"
         onSubmit={(e: React.FormEvent) => handleSubmit(e)}
       >
-        <AuthEmail handleChildData={setEmail} />
-        <AuthPassword handleChildData={setPassword} />
+        <FormInput inputProps={emailProps} />
+        <FormInput inputProps={passwordProps} />
         <AuthFooter title={title} message={message} />
       </form>
     </AuthWrapper>
