@@ -9,10 +9,10 @@ test('EPassword Change fail', async () => {
 
   const button = screen.getByRole('button');
 
-  const newPassword = screen.getByLabelText('New password');
+  const newPassword = screen.getByLabelText('*New password');
   expect(newPassword).toBeInTheDocument();
 
-  const newPasswordRepeat = screen.getByLabelText('Repeat new password');
+  const newPasswordRepeat = screen.getByLabelText('*Repeat new password');
   expect(newPasswordRepeat).toBeInTheDocument();
 
   let notEqual = screen.queryByText(messages.ValuesNotEqual);

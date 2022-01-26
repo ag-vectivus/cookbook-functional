@@ -9,10 +9,10 @@ test('Email Change fail', async () => {
 
   const button = screen.getByRole('button');
 
-  const newEmail = screen.getByLabelText('New email');
+  const newEmail = screen.getByLabelText('*New email');
   expect(newEmail).toBeInTheDocument();
 
-  const newEmailRepeat = screen.getByLabelText('Repeat new email');
+  const newEmailRepeat = screen.getByLabelText('*Repeat new email');
   expect(newEmailRepeat).toBeInTheDocument();
 
   let notEqual = screen.queryByText(messages.ValuesNotEqual);
