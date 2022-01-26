@@ -23,6 +23,11 @@ describe('Sign In behaviour', () => {
     });
     cy.get('[data-testid="recipe-card-link"]').should('have.length', 2);
 
+    cy.get('[data-testid="desktop-nav-add-recipe"]').click();
+    cy.location().should((loc) => {
+      expect(loc.href).to.eq('http://localhost:8000/add');
+    });
+
     cy.get('[data-tooltip="Log out"]').click();
     cy.location().should((loc) => {
       expect(loc.href).to.eq('http://localhost:8000/');
