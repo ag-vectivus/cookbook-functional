@@ -35,6 +35,37 @@ const formProps = {
     type: 'text',
     label: 'Your message...',
   },
+  recipeName: {
+    id: 'name',
+    type: 'text',
+    label: 'Recipe name',
+  },
+  recipeCategory: {
+    id: 'category',
+    label: 'Category',
+  },
+  recipeIngredients: {
+    id: 'ingredients',
+    type: 'text',
+    label: 'Ingredients',
+  },
+  recipeInstructions: {
+    id: 'textarea',
+    type: 'text',
+    label: 'Instructions',
+  },
+  recipeThumbnail: {
+    id: 'thumbnail',
+    type: 'text',
+    label: 'Thumbnail',
+    required: false,
+  },
+  recipeVideo: {
+    id: 'video',
+    type: 'text',
+    label: 'Video (youtube only!)',
+    required: false,
+  },
 };
 
 export default formProps;

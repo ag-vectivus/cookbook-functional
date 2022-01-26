@@ -10,6 +10,7 @@ enum messages {
   EmailChangeSuccess = 'Your email has been changed successfully!',
   PasswordChangeSuccess = 'Your password has been changed successfully!',
   AccountDeleted = 'Your has been deleted!',
+  RecipeAdded = 'Your recipe has been added successfully.',
 }
 
 export default messages;

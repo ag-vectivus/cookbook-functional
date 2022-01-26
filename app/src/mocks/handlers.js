@@ -113,4 +113,15 @@ export const handlers = [
       })
     );
   }),
+
+  rest.post(`${endpoints.server}/add`, (req, res, ctx) => {
+    const text = messages.RecipeAdded;
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        message: text,
+      })
+    );
+  }),
 ];

@@ -19,6 +19,7 @@ import SignUp from './modules/auth/SignUp';
 import ResetPassword from './modules/auth/ResetPassword';
 import UserSettings from './modules/userSettings/UserSettings';
 import MyRecipes from './pages/MyRecipes';
+import AddRecipe from './pages/AddRecipe';
 
 const App = (): JSX.Element => {
   return (
@@ -34,6 +35,7 @@ const App = (): JSX.Element => {
               <Route path="recipes/:category" element={<Recipes />} />
               <Route path="myrecipes" element={<MyRecipes />} />
               <Route path="recipes/:category/:id" element={<Recipe />} />
+              <Route path="add" element={<AddRecipe />} />
               <Route path="signin" element={<SignIn />} />
               <Route path="signup" element={<SignUp />} />
               <Route path="resetpassword" element={<ResetPassword />} />

@@ -1,3 +1,3 @@
-export default interface Indexable<T = any> {
+export default interface IIndexable<T = any> {
   [key: string]: T;
 }
