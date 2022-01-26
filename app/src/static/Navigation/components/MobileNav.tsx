@@ -53,6 +53,11 @@ const MobileNav = (): JSX.Element => {
       ) : (
         <React.Fragment>
           <li>
+            <Link to="/add">
+              <span className="deep-orange-text">Add recipe</span>
+            </Link>
+          </li>
+          <li>
             <Link to="/settings">
               <span className="deep-orange-text">Settings</span>
             </Link>

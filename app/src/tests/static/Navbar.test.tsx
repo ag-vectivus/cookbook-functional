@@ -64,5 +64,8 @@ describe('Display navbar correctly', () => {
 
     const logout = screen.getByRole('link', { name: /logout/i });
     expect(logout).toBeInTheDocument();
+
+    const add = screen.getByTestId('desktop-nav-add-recipe');
+    expect(add).toBeInTheDocument();
   });
 });

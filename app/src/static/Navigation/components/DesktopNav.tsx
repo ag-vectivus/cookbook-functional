@@ -49,6 +49,14 @@ const DesktopNav = (): JSX.Element => {
           ) : (
             <React.Fragment>
               <Link
+                to="/add"
+                className="btn-floating btn-small waves-effect waves-light orange darken-2 tooltipped"
+                data-testid="desktop-nav-add-recipe"
+                data-tooltip="Add Recipe"
+              >
+                <span className="material-icons">add</span>
+              </Link>
+              <Link
                 to="/settings"
                 className="btn-floating btn-small waves-effect waves-light orange darken-2 tooltipped"
                 data-tooltip="Settings"
