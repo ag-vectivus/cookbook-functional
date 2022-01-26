@@ -14,32 +14,29 @@ This is a frontend part of the CookBook - a cooking recipe portal. Created by us
   - TypeScript
   - SCSS (+ BEM)
   - MaterializeCSS
-  - jQuery (to handle Materialize events)
 
 - ### Tests:
 
   - React Testing Library / Jest
   - Mock Service Worker
+  - Cypress
 
-<!-- - ### Design patterns: -->
+## What I worked on
 
----
+This project was bootstrapped with Create React App.
 
-<!-- ## Structure
+    - Used MaterializeCSS,
+    - Used Context API to manage React state,
+    - Unit Testing (TDD) using Jest and React-testing-library - service functions.
+    - Testing displaying the data correctly in the DOM and website rendering using React-testing-library and Cypress.
 
-  Tree
+## Installation
 
-- ### Api
-
-- ### Helpers
-
-- ### Modules
-
-- ### Service -->
+To use this app you can clone it from the repository. When it is downloaded open folder with app in your code editor and in terminal enter "npm install" - it should update/install necessary dependencies. After that you can use this app on your device (to use app in developer mode use terminal command: npm start). To run tests please run the app before, all data is provided by MockServiceWorker.
 
 ## License
 
-Copyright (c) 2021, Artur Gałecki
+Copyright (c) 2021/2022, Artur Gałecki
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
